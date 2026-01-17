@@ -1,0 +1,135 @@
+[
+  {
+    "id": "manual-2-https---docs-google-com-presentation-d-10ffQJ5D-uYzFBmRPJSLR882-u8m-uobyKwpy-jjaW4U-edit",
+    "title": "リアルタイムサーバー運用改善〜メタバースプラットフォームにおけるEKS運用とDatadog活用によるオートスケール実践〜",
+    "slideUrl": "https://docs.google.com/presentation/d/10ffQJ5D_uYzFBmRPJSLR882_u8m_uobyKwpy-jjaW4U/edit",
+    "publishedAt": "2025-11-18",
+    "thumbnail": "https://lh7-us.googleusercontent.com/docs/AHkbwyJ6RM_H6vmr5oEY0oRs62i1d_4dqTuorDmUDFF9oIAQD2m0AF_nSZm4djUrzrPc_yATngM9pgKLXKVbfCcYRgYIMgD8Lh81ggEMlLvrXJIb7m2wwN4I=w1200-h630-p"
+  },
+  {
+    "id": "sd-hono-opentelemetry-2025",
+    "title": "HonoとOpenTelemetryで実現するオブザーバービリティ構築",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/hono-opentelemetry-2025",
+    "publishedAt": "2025-10-17",
+    "thumbnail": "https://files.speakerdeck.com/presentations/db051765286d4c6f9ccfff4024777bb1/preview_slide_0.jpg?37014160"
+  },
+  {
+    "id": "manual-1-https---docs-google-com-presentation-d-1GuL0e7nS-A-X7yBQ7itFNZTOftMooDFJgLjefUD91QU-edit",
+    "title": "メタバースプロジェクトにおけるObservability構築とユーザー視点での信頼性可視化の現在地",
+    "slideUrl": "https://docs.google.com/presentation/d/1GuL0e7nS-A_X7yBQ7itFNZTOftMooDFJgLjefUD91QU/edit",
+    "publishedAt": "2025-07-11",
+    "thumbnail": "https://lh7-us.googleusercontent.com/docs/AHkbwyIL65J6AsSwNSWHBotLf84uokTp78CIwIxJM3U3-Nh2Guq3pV6Jr701Ksn96D0DiHAKgaOHzd5qf8fPxI8UbLLiGn6TuZPlYAPLF7ZDPxH42nY9OdJe=w1200-h630-p"
+  },
+  {
+    "id": "sd-errortrackingtoorchestrion",
+    "title": "ErrorTrackingとOrchestrion",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/errortrackingtoorchestrion",
+    "publishedAt": "2025-02-26",
+    "thumbnail": "https://files.speakerdeck.com/presentations/9287e550eb714a918369479f16a6e071/preview_slide_0.jpg?34006085"
+  },
+  {
+    "id": "sd-discord-cloudflare",
+    "title": "DiscordとCloudflare",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/discord-cloudflare",
+    "publishedAt": "2025-02-14",
+    "thumbnail": "https://files.speakerdeck.com/presentations/f0691a68fda94420b9db7f6dccdb751e/preview_slide_0.jpg?33851520"
+  },
+  {
+    "id": "sd-cloudflare-workflows",
+    "title": "Cloudflare Workflowsを使いたい倒したい",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/cloudflare-workflows",
+    "publishedAt": "2025-01-31",
+    "thumbnail": "https://files.speakerdeck.com/presentations/a35af09f8bba4a0c87cba4a20a33322f/preview_slide_0.jpg?33655959"
+  },
+  {
+    "id": "sd-tslogdeshi-xian-surusekiyuanametadetaguan-li-torogingu",
+    "title": "tslogで実現するセキュアなメタデータ管理とロギング",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/tslogdeshi-xian-surusekiyuanametadetaguan-li-torogingu",
+    "publishedAt": "2024-11-16",
+    "thumbnail": "https://files.speakerdeck.com/presentations/90a2ee9994204240ae66f2aefbaf7123/preview_slide_0.jpg?32637043"
+  },
+  {
+    "id": "sd-zui-jin-ge-ren-kai-fa-gare-i-monitaringuqiang-hua-bian-v0-dot-1-0",
+    "title": "最近個人開発が熱い ~モニタリング強化編v0.1.0~",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-gare-i-monitaringuqiang-hua-bian-v0-dot-1-0",
+    "publishedAt": "2024-11-06",
+    "thumbnail": "https://files.speakerdeck.com/presentations/749e4fe75fcc4a6bb6867bb73beb35b7/preview_slide_0.jpg?32505537"
+  },
+  {
+    "id": "sd-honodeshi-xian-surubatukuendokai-fa-noima",
+    "title": "Honoで実現するバックエンド開発のイマ",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/honodeshi-xian-surubatukuendokai-fa-noima",
+    "publishedAt": "2024-10-21",
+    "thumbnail": "https://files.speakerdeck.com/presentations/808f8c7291df4b368ab81cd3e85e5d8c/preview_slide_0.jpg?32247737"
+  },
+  {
+    "id": "sd-gotowasi-chao-ru-men",
+    "title": "GoとWASI~超入門~",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/gotowasi-chao-ru-men",
+    "publishedAt": "2024-09-04",
+    "thumbnail": "https://files.speakerdeck.com/presentations/2a5cb21221d644e3a6c956584f0fd70c/preview_slide_0.jpg?31604391"
+  },
+  {
+    "id": "sd-zui-jin-ge-ren-kai-fa-kare-i-duo-yan-yu-dui-ying-bian",
+    "title": "最近個人開発が熱い ~多言語対応編~",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-kare-i-duo-yan-yu-dui-ying-bian",
+    "publishedAt": "2024-08-24",
+    "thumbnail": "https://files.speakerdeck.com/presentations/aaee38baf5d944749261c7bc967eafc5/preview_slide_0.jpg?31466442"
+  },
+  {
+    "id": "sd-hoirahuretozi-dong-sheng-cheng-turuwoshi-wanakunatutahua",
+    "title": "ボイラープレート自動生成ツールを使わなくなった話.pdf",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/hoirahuretozi-dong-sheng-cheng-turuwoshi-wanakunatutahua",
+    "publishedAt": "2024-07-17",
+    "thumbnail": "https://files.speakerdeck.com/presentations/a8963101b3ef46ce8a6ee5cbbe5885a3/preview_slide_0.jpg?31010736"
+  },
+  {
+    "id": "sd-using-hono-in-b2b-saas-application",
+    "title": "Using_Hono_in__B2B_SaaS_Application.pdf",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/using-hono-in-b2b-saas-application",
+    "publishedAt": "2024-06-21",
+    "thumbnail": "https://files.speakerdeck.com/presentations/201d1c2359e442dda44a6db9d027b716/preview_slide_0.jpg?30704145"
+  },
+  {
+    "id": "sd-introduction-to-database-connection-management-patterns-in-typescript",
+    "title": "Introduction to Database Connection Management Patterns in TypeScript.pdf",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/introduction-to-database-connection-management-patterns-in-typescript",
+    "publishedAt": "2024-05-11",
+    "thumbnail": "https://files.speakerdeck.com/presentations/52a72e1421a246ef84ff8893b752d9d6/preview_slide_0.jpg?30053482"
+  },
+  {
+    "id": "sd-azure-container-apps-secretguan-li-toiac",
+    "title": "Azure Container AppsのSecret管理とIaC",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/azure-container-apps-secretguan-li-toiac",
+    "publishedAt": "2024-02-26",
+    "thumbnail": "https://files.speakerdeck.com/presentations/d25c8c23c2fe463e80952a4ef669cfa0/preview_slide_0.jpg?29081910"
+  },
+  {
+    "id": "sd-zui-jin-ge-ren-kai-fa-gare-i",
+    "title": "最近個人開発が熱い",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-gare-i",
+    "publishedAt": "2024-02-23",
+    "thumbnail": "https://files.speakerdeck.com/presentations/be1d602e1fcf408a8a299c268c7d64a7/preview_slide_0.jpg?29069007"
+  },
+  {
+    "id": "sd-xin-gui-sabisuno-batukuendokai-fa-debunxhonowoshi-ishi-mete-2keyue-jing-tutahua",
+    "title": "新規サービスの バックエンド開発でBun×Honoを使い始めて 2ヶ月経った話",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/xin-gui-sabisuno-batukuendokai-fa-debunxhonowoshi-ishi-mete-2keyue-jing-tutahua",
+    "publishedAt": "2024-01-26",
+    "thumbnail": "https://files.speakerdeck.com/presentations/06c687d098314799940c9b1dd493badc/preview_slide_0.jpg?28680089"
+  },
+  {
+    "id": "manual-0-https---speakerdeck-com-cyberagentdevelopers-dui-hua-xing-aipurodakutonojin-tozhan-wang-chatbotvoicebotnokai-fa-ji-shu-wojie-shuo-slide-20",
+    "title": "AIを活用したChatBot・VoiceBotのシステム概観",
+    "slideUrl": "https://speakerdeck.com/cyberagentdevelopers/dui-hua-xing-aipurodakutonojin-tozhan-wang-chatbotvoicebotnokai-fa-ji-shu-wojie-shuo?slide=20",
+    "publishedAt": "2023-12-14",
+    "thumbnail": "https://files.speakerdeck.com/presentations/c889977363864cd6a1f85e8dab3750a6/slide_19.jpg"
+  },
+  {
+    "id": "sd-grpctohurontoento-connectwotian-ete",
+    "title": "gRPCとフロントエンド_Connectを添えて",
+    "slideUrl": "https://speakerdeck.com/sugarcat7/grpctohurontoento-connectwotian-ete",
+    "publishedAt": "2023-10-17",
+    "thumbnail": "https://files.speakerdeck.com/presentations/04af5edbd65b4d31b16cd0e48ea2b67d/preview_slide_0.jpg?27430038"
+  }
+]

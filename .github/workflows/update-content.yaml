@@ -1,0 +1,90 @@
+name: Update Content
+
+on:
+  # Daily at UTC 0:00 (JST 9:00)
+  schedule:
+    - cron: '0 0 * * *'
+
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no PR creation)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.24.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build content-fetcher
+        run: pnpm --filter @my-pages/content-fetcher build
+
+      - name: Generate content
+        run: pnpm --filter @my-pages/content-fetcher generate
+        env:
+          OUTPUT_DIR: ${{ github.workspace }}
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true' && inputs.dry_run != 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: update external content'
+          title: 'chore: update external content'
+          body: |
+            Automated content update from external sources.
+
+            **Sources:**
+            - Zenn RSS Feed
+            - Hatena Blog RSS
+            - SpeakerDeck RSS
+
+            ---
+            This PR was automatically generated.
+          branch: chore/update-content
+          delete-branch: true
+          labels: |
+            automated
+            content-update
+
+      - name: Summary
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          echo "### Content Updated :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Changes detected and PR created (unless dry run)." >> $GITHUB_STEP_SUMMARY
+
+      - name: No changes
+        if: steps.changes.outputs.has_changes == 'false'
+        run: |
+          echo "### No Changes :white_check_mark:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Content is already up to date." >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalPassThroughEnv": [
+
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "cache": false
+    },
+    "type-check": {
+      "dependsOn": ["^type-check"],
+      "cache": false
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "dev:subscriber": {
+      "cache": false,
+      "persistent": true
+    },
+    "biome:check": {
+      "cache": false
+    },
+    "biome:format": {
+      "dependsOn": ["biome:check"],
+      "cache": false
+    },
+    "biome:unsafe-fix": {
+      "dependsOn": ["biome:format"],
+      "cache": false
+    },
+    "biome:lint": {
+      "dependsOn": ["biome:unsafe-fix"],
+      "cache": false
+    },
+    "biome": {
+      "dependsOn": ["biome:lint"],
+      "cache": false
+    },
+"//#knip": {
+      "cache": false,
+      "inputs": [
+        "knip.json",
+        "packages/*/src/**",
+        "packages/*/package.json",
+        "services/*/app/**",
+        "services/*/features/**",
+        "services/*/shared/**",
+        "services/*/{domain,infra,usecase,cmd,local}/**",
+        "services/*/package.json"
+      ]
+    },
+    "//#knip:fix": {
+      "cache": false
+    }
+  }
+}

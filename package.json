@@ -1,0 +1,27 @@
+{
+  "name": "ba-suu",
+  "description": "BA-SUU",
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:mypages": "turbo dev --filter=mypages",
+    "build": "turbo build",
+    "type-check": "turbo type-check",
+    "biome": "turbo biome",
+    "knip": "knip",
+    "knip:fix": "knip --fix",
+    "security-scan": "./scripts/security-scan.sh",
+    "security-scan:docker": "./scripts/security-scan.sh --docker",
+    "prepare": "lefthook install"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "knip": "^5.81.0",
+    "lefthook": "^1.11.13",
+    "turbo": "2.6.3",
+    "typescript": "catalog:"
+  },
+  "packageManager": "pnpm@10.24.0",
+  "pnpm": {
+    "onlyBuiltDependencies": ["lefthook"]
+  }
+}

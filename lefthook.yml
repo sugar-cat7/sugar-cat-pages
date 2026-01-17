@@ -1,0 +1,32 @@
+# Git hooks configuration
+# Skip: LEFTHOOK=0 git commit -m "emergency"
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: biome
+      run: pnpm biome
+
+    - name: knip
+      run: pnpm knip
+
+    - name: type-check
+      run: pnpm type-check
+
+pre-push:
+  parallel: true
+  jobs:
+    - name: build
+      run: pnpm build
+
+    - name: biome
+      run: pnpm biome
+
+    - name: knip
+      run: pnpm knip
+
+    - name: type-check
+      run: pnpm type-check
+
+    - name: security-scan
+      run: pnpm security-scan
