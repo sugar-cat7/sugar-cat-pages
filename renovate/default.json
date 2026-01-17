@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "config:base",
+    ":separateMultipleMajorReleases",
+    ":timezone(Asia/Tokyo)",
+    "local>sugar-cat7/sugar-cat-pages:renovate/schedule",
+    "local>sugar-cat7/sugar-cat-pages:renovate/automergePin",
+    "local>sugar-cat7/sugar-cat-pages:renovate/automergeTypesMinor",
+    "local>sugar-cat7/sugar-cat-pages:renovate/groupLinters",
+    "local>sugar-cat7/sugar-cat-pages:renovate/vulnerabilityAlerts",
+    "local>sugar-cat7/sugar-cat-pages:renovate/pinGitHubActionDigests",
+    "local>sugar-cat7/sugar-cat-pages:renovate/minimumReleaseAge",
+    "local>sugar-cat7/sugar-cat-pages:renovate/aqua",
+    "github>aquaproj/aqua-renovate-config#2.9.0"
+  ],
+  "labels": ["renovate"],
+  "npm": {
+    "rangeStrategy": "bump"
+  },
+  "vulnerabilityAlerts": {
+    "labels": ["security"]
+  }
+}

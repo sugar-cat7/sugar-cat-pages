@@ -1,0 +1,11 @@
+{
+  "packageRules": [
+    {
+      "matchManagers": ["aqua"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
+    }
+  ]
+}
