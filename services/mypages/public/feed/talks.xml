@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Sugar Cat Dev - Talks</title>
+        <link>https://sugar-cat.dev/talks</link>
+        <description>Sugar Catの登壇資料</description>
+        <lastBuildDate>Wed, 21 Jan 2026 15:02:24 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ja</language>
+        <copyright>All rights reserved 2026, Sugar Cat</copyright>
+        <item>
+            <title><![CDATA[リアルタイムサーバー運用改善〜メタバースプラットフォームにおけるEKS運用とDatadog活用によるオートスケール実践〜]]></title>
+            <link>https://docs.google.com/presentation/d/10ffQJ5D_uYzFBmRPJSLR882_u8m_uobyKwpy-jjaW4U/edit</link>
+            <guid>https://docs.google.com/presentation/d/10ffQJ5D_uYzFBmRPJSLR882_u8m_uobyKwpy-jjaW4U/edit</guid>
+            <pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[リアルタイムサーバー運用改善〜メタバースプラットフォームにおけるEKS運用とDatadog活用によるオートスケール実践〜]]></description>
+        </item>
+        <item>
+            <title><![CDATA[HonoとOpenTelemetryで実現するオブザーバービリティ構築]]></title>
+            <link>https://speakerdeck.com/sugarcat7/hono-opentelemetry-2025</link>
+            <guid>https://speakerdeck.com/sugarcat7/hono-opentelemetry-2025</guid>
+            <pubDate>Fri, 17 Oct 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[HonoとOpenTelemetryで実現するオブザーバービリティ構築]]></description>
+        </item>
+        <item>
+            <title><![CDATA[メタバースプロジェクトにおけるObservability構築とユーザー視点での信頼性可視化の現在地]]></title>
+            <link>https://docs.google.com/presentation/d/1GuL0e7nS-A_X7yBQ7itFNZTOftMooDFJgLjefUD91QU/edit</link>
+            <guid>https://docs.google.com/presentation/d/1GuL0e7nS-A_X7yBQ7itFNZTOftMooDFJgLjefUD91QU/edit</guid>
+            <pubDate>Fri, 11 Jul 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[メタバースプロジェクトにおけるObservability構築とユーザー視点での信頼性可視化の現在地]]></description>
+        </item>
+        <item>
+            <title><![CDATA[ErrorTrackingとOrchestrion]]></title>
+            <link>https://speakerdeck.com/sugarcat7/errortrackingtoorchestrion</link>
+            <guid>https://speakerdeck.com/sugarcat7/errortrackingtoorchestrion</guid>
+            <pubDate>Wed, 26 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[ErrorTrackingとOrchestrion]]></description>
+        </item>
+        <item>
+            <title><![CDATA[DiscordとCloudflare]]></title>
+            <link>https://speakerdeck.com/sugarcat7/discord-cloudflare</link>
+            <guid>https://speakerdeck.com/sugarcat7/discord-cloudflare</guid>
+            <pubDate>Fri, 14 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[DiscordとCloudflare]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Cloudflare Workflowsを使いたい倒したい]]></title>
+            <link>https://speakerdeck.com/sugarcat7/cloudflare-workflows</link>
+            <guid>https://speakerdeck.com/sugarcat7/cloudflare-workflows</guid>
+            <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cloudflare Workflowsを使いたい倒したい]]></description>
+        </item>
+        <item>
+            <title><![CDATA[tslogで実現するセキュアなメタデータ管理とロギング]]></title>
+            <link>https://speakerdeck.com/sugarcat7/tslogdeshi-xian-surusekiyuanametadetaguan-li-torogingu</link>
+            <guid>https://speakerdeck.com/sugarcat7/tslogdeshi-xian-surusekiyuanametadetaguan-li-torogingu</guid>
+            <pubDate>Sat, 16 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[tslogで実現するセキュアなメタデータ管理とロギング]]></description>
+        </item>
+        <item>
+            <title><![CDATA[最近個人開発が熱い ~モニタリング強化編v0.1.0~]]></title>
+            <link>https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-gare-i-monitaringuqiang-hua-bian-v0-dot-1-0</link>
+            <guid>https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-gare-i-monitaringuqiang-hua-bian-v0-dot-1-0</guid>
+            <pubDate>Wed, 06 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近個人開発が熱い ~モニタリング強化編v0.1.0~]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Honoで実現するバックエンド開発のイマ]]></title>
+            <link>https://speakerdeck.com/sugarcat7/honodeshi-xian-surubatukuendokai-fa-noima</link>
+            <guid>https://speakerdeck.com/sugarcat7/honodeshi-xian-surubatukuendokai-fa-noima</guid>
+            <pubDate>Mon, 21 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Honoで実現するバックエンド開発のイマ]]></description>
+        </item>
+        <item>
+            <title><![CDATA[GoとWASI~超入門~]]></title>
+            <link>https://speakerdeck.com/sugarcat7/gotowasi-chao-ru-men</link>
+            <guid>https://speakerdeck.com/sugarcat7/gotowasi-chao-ru-men</guid>
+            <pubDate>Wed, 04 Sep 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[GoとWASI~超入門~]]></description>
+        </item>
+        <item>
+            <title><![CDATA[最近個人開発が熱い ~多言語対応編~]]></title>
+            <link>https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-kare-i-duo-yan-yu-dui-ying-bian</link>
+            <guid>https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-kare-i-duo-yan-yu-dui-ying-bian</guid>
+            <pubDate>Sat, 24 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近個人開発が熱い ~多言語対応編~]]></description>
+        </item>
+        <item>
+            <title><![CDATA[ボイラープレート自動生成ツールを使わなくなった話.pdf]]></title>
+            <link>https://speakerdeck.com/sugarcat7/hoirahuretozi-dong-sheng-cheng-turuwoshi-wanakunatutahua</link>
+            <guid>https://speakerdeck.com/sugarcat7/hoirahuretozi-dong-sheng-cheng-turuwoshi-wanakunatutahua</guid>
+            <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[ボイラープレート自動生成ツールを使わなくなった話.pdf]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Using_Hono_in__B2B_SaaS_Application.pdf]]></title>
+            <link>https://speakerdeck.com/sugarcat7/using-hono-in-b2b-saas-application</link>
+            <guid>https://speakerdeck.com/sugarcat7/using-hono-in-b2b-saas-application</guid>
+            <pubDate>Fri, 21 Jun 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Using_Hono_in__B2B_SaaS_Application.pdf]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Introduction to Database Connection Management Patterns in TypeScript.pdf]]></title>
+            <link>https://speakerdeck.com/sugarcat7/introduction-to-database-connection-management-patterns-in-typescript</link>
+            <guid>https://speakerdeck.com/sugarcat7/introduction-to-database-connection-management-patterns-in-typescript</guid>
+            <pubDate>Sat, 11 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Introduction to Database Connection Management Patterns in TypeScript.pdf]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Azure Container AppsのSecret管理とIaC]]></title>
+            <link>https://speakerdeck.com/sugarcat7/azure-container-apps-secretguan-li-toiac</link>
+            <guid>https://speakerdeck.com/sugarcat7/azure-container-apps-secretguan-li-toiac</guid>
+            <pubDate>Mon, 26 Feb 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Azure Container AppsのSecret管理とIaC]]></description>
+        </item>
+        <item>
+            <title><![CDATA[最近個人開発が熱い]]></title>
+            <link>https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-gare-i</link>
+            <guid>https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-gare-i</guid>
+            <pubDate>Fri, 23 Feb 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近個人開発が熱い]]></description>
+        </item>
+        <item>
+            <title><![CDATA[新規サービスの バックエンド開発でBun×Honoを使い始めて 2ヶ月経った話]]></title>
+            <link>https://speakerdeck.com/sugarcat7/xin-gui-sabisuno-batukuendokai-fa-debunxhonowoshi-ishi-mete-2keyue-jing-tutahua</link>
+            <guid>https://speakerdeck.com/sugarcat7/xin-gui-sabisuno-batukuendokai-fa-debunxhonowoshi-ishi-mete-2keyue-jing-tutahua</guid>
+            <pubDate>Fri, 26 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[新規サービスの バックエンド開発でBun×Honoを使い始めて 2ヶ月経った話]]></description>
+        </item>
+        <item>
+            <title><![CDATA[AIを活用したChatBot・VoiceBotのシステム概観]]></title>
+            <link>https://speakerdeck.com/cyberagentdevelopers/dui-hua-xing-aipurodakutonojin-tozhan-wang-chatbotvoicebotnokai-fa-ji-shu-wojie-shuo?slide=20</link>
+            <guid>https://speakerdeck.com/cyberagentdevelopers/dui-hua-xing-aipurodakutonojin-tozhan-wang-chatbotvoicebotnokai-fa-ji-shu-wojie-shuo?slide=20</guid>
+            <pubDate>Thu, 14 Dec 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[CyberAgent Developersでの発表]]></description>
+        </item>
+        <item>
+            <title><![CDATA[gRPCとフロントエンド_Connectを添えて]]></title>
+            <link>https://speakerdeck.com/sugarcat7/grpctohurontoento-connectwotian-ete</link>
+            <guid>https://speakerdeck.com/sugarcat7/grpctohurontoento-connectwotian-ete</guid>
+            <pubDate>Tue, 17 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[gRPCとフロントエンド_Connectを添えて]]></description>
+        </item>
+    </channel>
+</rss>

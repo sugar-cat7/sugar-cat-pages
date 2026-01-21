@@ -8,6 +8,7 @@ import {
   fetchSpeakerDeckTalks,
   fetchOgImage,
 } from "./fetchers";
+import { generateBlogRss, generateTalksRss } from "./generators";
 import { manualPosts } from "./config";
 import type { BlogPost, Talk } from "./schemas";
 
@@ -20,6 +21,15 @@ const BLOG_OUTPUT_PATH = resolve(
 const TALKS_OUTPUT_PATH = resolve(
   OUTPUT_BASE,
   "services/mypages/app/routes/talks/data/talks.json"
+);
+
+const BLOG_RSS_OUTPUT_PATH = resolve(
+  OUTPUT_BASE,
+  "services/mypages/public/feed/blog.xml"
+);
+const TALKS_RSS_OUTPUT_PATH = resolve(
+  OUTPUT_BASE,
+  "services/mypages/public/feed/talks.xml"
 );
 
 async function generateBlogPosts(): Promise<Result<BlogPost[], BaseError>> {
@@ -81,6 +91,12 @@ function writeJson(path: string, data: unknown): void {
   console.log(`Written: ${path}`);
 }
 
+function writeXml(path: string, data: string): void {
+  mkdirSync(dirname(path), { recursive: true });
+  writeFileSync(path, data, "utf-8");
+  console.log(`Written: ${path}`);
+}
+
 async function main(): Promise<void> {
   console.log("=== Content Fetcher ===\n");
 
@@ -106,9 +122,16 @@ async function main(): Promise<void> {
   writeJson(BLOG_OUTPUT_PATH, posts);
   writeJson(TALKS_OUTPUT_PATH, talks);
 
+  console.log("\nGenerating RSS feeds...");
+  const blogRss = generateBlogRss(posts);
+  const talksRss = generateTalksRss(talks);
+  writeXml(BLOG_RSS_OUTPUT_PATH, blogRss);
+  writeXml(TALKS_RSS_OUTPUT_PATH, talksRss);
+
   console.log("\n=== Done ===");
   console.log(`Total blog posts: ${posts.length}`);
   console.log(`Total talks: ${talks.length}`);
+  console.log("RSS feeds: /feed/blog.xml, /feed/talks.xml");
 }
 
 main();
