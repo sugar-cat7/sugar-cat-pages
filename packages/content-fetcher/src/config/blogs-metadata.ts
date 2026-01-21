@@ -14,6 +14,7 @@ export const manualPosts: Array<{
     description: "",
     url: "https://sre-magazine.net/articles/7/sugar_cat/",
     publishedAt: "2025-03-24",
+    thumbnail: "https://sre-magazine.net/images/articles/7/sugar_cat/ogp.png",
   },
   {
     title: "メタバースプラットフォームにおけるSentryの導入と活用",
