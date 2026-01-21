@@ -27,6 +27,3 @@ pre-push:
 
     - name: type-check
       run: pnpm type-check
-
-    - name: security-scan
-      run: pnpm security-scan

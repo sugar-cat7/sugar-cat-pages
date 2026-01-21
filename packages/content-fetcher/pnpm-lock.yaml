@@ -23,6 +23,9 @@ importers:
       '@my-pages/errors':
         specifier: workspace:*
         version: link:../errors
+      feed:
+        specifier: ^4.2.2
+        version: 4.2.2
       rss-parser:
         specifier: ^3.13.0
         version: 3.13.0
@@ -457,6 +460,10 @@ packages:
       picomatch:
         optional: true
 
+  feed@4.2.2:
+    resolution: {integrity: sha512-u5/sxGfiMfZNtJ3OvQpXcvotFpYkL0n9u9mM2vkui2nGo8b4wvDkJ8gAkYqbA8QpGyFCv3RK0Z+Iv+9veCS9bQ==}
+    engines: {node: '>=0.4.0'}
+
   fix-dts-default-cjs-exports@1.0.1:
     resolution: {integrity: sha512-pVIECanWFC61Hzl2+oOCtoJ3F17kglZC/6N94eRWycFgBH35hHx0Li604ZIzhseh97mf2p0cv7vVrOZGoqhlEg==}
 
@@ -732,6 +739,10 @@ packages:
   why-is-node-running@2.3.0:
     resolution: {integrity: sha512-hUrmaWBdVDcxvYqnyh09zunKzROWjbZTiNy8dBEjkS7ehEDQibXJ7XvlmtbwuTclUiIyN+CyXQD4Vmko8fNm8w==}
     engines: {node: '>=8'}
+    hasBin: true
+
+  xml-js@1.6.11:
+    resolution: {integrity: sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==}
     hasBin: true
 
   xml2js@0.5.0:
@@ -1036,6 +1047,10 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.3
 
+  feed@4.2.2:
+    dependencies:
+      xml-js: 1.6.11
+
   fix-dts-default-cjs-exports@1.0.1:
     dependencies:
       magic-string: 0.30.21
@@ -1288,6 +1303,10 @@ snapshots:
     dependencies:
       siginfo: 2.0.0
       stackback: 0.0.2
+
+  xml-js@1.6.11:
+    dependencies:
+      sax: 1.4.4
 
   xml2js@0.5.0:
     dependencies:
