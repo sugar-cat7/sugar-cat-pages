@@ -3,6 +3,19 @@ import { Link, useLocation } from "react-router";
 import { cn } from "~/shared/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 
+function RssIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M6.18 15.64a2.18 2.18 0 1 1 0 4.36 2.18 2.18 0 0 1 0-4.36m12.64 4.36A14.82 14.82 0 0 0 4 5.18V8.8a11.18 11.18 0 0 1 11.2 11.2h3.62zm-5.82 0a9 9 0 0 0-9-9v3.64a5.36 5.36 0 0 1 5.36 5.36H13z" />
+    </svg>
+  );
+}
+
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -45,11 +58,31 @@ export function Header() {
               </Link>
             );
           })}
+          <a
+            href="/feed/blog.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground-soft hover:text-foreground transition-colors duration-fast"
+            aria-label="RSS Feed"
+            title="RSS Feed"
+          >
+            <RssIcon className="w-5 h-5" />
+          </a>
           <ThemeToggle />
         </nav>
 
         {/* Mobile Controls */}
         <div className="md:hidden absolute right-4 flex items-center gap-1">
+          <a
+            href="/feed/blog.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-foreground-soft hover:text-foreground transition-colors duration-fast"
+            aria-label="RSS Feed"
+            title="RSS Feed"
+          >
+            <RssIcon className="w-5 h-5" />
+          </a>
           <ThemeToggle />
           <button
             type="button"
