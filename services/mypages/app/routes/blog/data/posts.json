@@ -1,9 +1,18 @@
 [
   {
+    "id": "hatena-2026-01-21-093744",
+    "title": "Raw ChartでKustomize管理のマニフェストをそのままHelmfile管理にする",
+    "description": "Raw Chartは、Helmfile から任意の Kubernetes マニフェストをデプロイするための汎用的な Helm Chart です。\nbedag.github.io\n既存の Kustomize 構成をとりあえず Helmfile 管理に移したい場合や、\n諸事情により Helmfile の統合機能を素直に使えない場合（ConfigMapGenerator を使っているなど）にも利用できま...",
+    "url": "https://blog.sugar-cat.dev/entry/2026/01/21/093744",
+    "source": "hatena",
+    "publishedAt": "2026-01-21",
+    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901346143453/1768955952"
+  },
+  {
     "id": "hatena-2026-01-17-181559",
     "title": "開発環境現状確認 2026",
     "description": "流行りに乗ってみた\nTerminal Emulator\n元々Hyperを使っていたのですが、最近Ghosttyに乗り換えました。\nghostty.org\n（リモート側のホストで動かすtmuxセッションとのクリップボード共有のために、OSC 52のサポートが必要だったため...）\ngithub.com\n\nちょっと似てて気に入ってます。\nShell\nMacなのでzshを使っています。\n自分はクラウドを...",
-    "url": "https://sugar-cat.hatenablog.com/entry/2026/01/17/181559",
+    "url": "https://blog.sugar-cat.dev/entry/2026/01/17/181559",
     "source": "hatena",
     "publishedAt": "2026-01-17",
     "thumbnail": "https://cdn.image.st-hatena.com/image/scale/476afaacfe2c677f7a724dcc85f1cac0c1f993ce/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fs%2Fsugar-cat-dev%2F20260117%2F20260117181316.png"
@@ -12,7 +21,7 @@
     "id": "hatena-2026-01-17-180503",
     "title": "ブログ移設",
     "description": "もっと周りを気にせずにカジュアルに色々なテーマでブログを書きたいな、、みたいな場面が増えたのではてなブログに移ってみることにした。\n今までZennに投稿していた記事とかは一旦そのままにするけど、今後Publication以外はこっちに投稿していく予定。",
-    "url": "https://sugar-cat.hatenablog.com/entry/2026/01/17/180503",
+    "url": "https://blog.sugar-cat.dev/entry/2026/01/17/180503",
     "source": "hatena",
     "publishedAt": "2026-01-17",
     "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901344974963/1768642426"
@@ -87,7 +96,7 @@
     "url": "https://findy-tools.io/products/sentry/22/550",
     "source": "external",
     "publishedAt": "2025-07-04",
-    "thumbnail": "https://findy-tools.io/products/sentry/22/550/opengraph-image?2ea8a8ef020d0880"
+    "thumbnail": "https://findy-tools.io/products/sentry/22/550/opengraph-image?de479d738d5ec9b6"
   },
   {
     "id": "zenn-fde6d255e1bdc5",
@@ -104,8 +113,7 @@
     "description": "",
     "url": "https://sre-magazine.net/articles/7/sugar_cat/",
     "source": "external",
-    "publishedAt": "2025-03-24",
-    "thumbnail": "https://sre-magazine.net/images/articles/7/sugar_cat/ogp.png"
+    "publishedAt": "2025-03-24"
   },
   {
     "id": "zenn-35e3efb8735923",
