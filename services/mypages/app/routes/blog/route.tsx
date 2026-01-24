@@ -5,8 +5,7 @@ import { generateMeta } from "~/shared/lib/seo";
 export const meta: Route.MetaFunction = () =>
   generateMeta({
     title: "Blog | Sugar Cat",
-    description:
-      "Sugar Catの技術記事一覧。React、TypeScript、Web開発に関する記事を公開しています。",
+    description: "技術記事一覧",
     path: "/blog",
   });
 

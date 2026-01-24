@@ -6,7 +6,7 @@ const SITE_CONFIG = {
   siteName: "Sugar Cat Dev",
   siteUrl: "https://sugar-cat.dev",
   twitterHandle: "@sugar235711",
-  defaultImage: "https://sugar-cat.dev/ogp.png",
+  defaultImage: "https://sugar-cat.dev/sugar-cat.png",
   locale: "ja_JP",
 } as const;
 
