@@ -9,13 +9,13 @@ export const rssConfig = {
   itemLimit: 20,
   feeds: {
     blog: {
-      title: "Sugar Cat Dev - Blog",
-      description: "Sugar Catのブログ記事",
+      title: "Sugar Cat Dev",
+      description: "技術記事",
       path: "/feed/blog.xml",
     },
     talks: {
-      title: "Sugar Cat Dev - Talks",
-      description: "Sugar Catの登壇資料",
+      title: "Sugar Cat Dev",
+      description: "登壇資料",
       path: "/feed/talks.xml",
     },
   },
