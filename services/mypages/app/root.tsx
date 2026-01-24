@@ -37,7 +37,8 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700&display=swap",
   },
   // Favicon & Icons
-  { rel: "icon", href: "/favicon.png", type: "image/png" },
+  { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
+  { rel: "icon", href: "/favicon.png", type: "image/png", sizes: "32x32" },
   { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
   // Web Manifest
   { rel: "manifest", href: "/manifest.webmanifest" },
