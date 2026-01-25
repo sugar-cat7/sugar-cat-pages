@@ -1,7 +1,7 @@
 {
   "name": "Sugar Cat",
   "short_name": "Sugar Cat",
-  "description": "Sugar Catのポートフォリオサイト",
+  "description": "Sugar Catのテックブログ。",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#F7F6F3",
