@@ -59,7 +59,7 @@ export function Header() {
             );
           })}
           <a
-            href="/feed/blog.xml"
+            href="/feed"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground-soft hover:text-foreground transition-colors duration-fast"
@@ -74,7 +74,7 @@ export function Header() {
         {/* Mobile Controls */}
         <div className="md:hidden absolute right-4 flex items-center gap-1">
           <a
-            href="/feed/blog.xml"
+            href="/feed"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 text-foreground-soft hover:text-foreground transition-colors duration-fast"

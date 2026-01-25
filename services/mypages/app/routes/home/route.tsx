@@ -6,7 +6,7 @@ export const meta: Route.MetaFunction = () => [
   ...generateMeta({
     title: "Sugar Cat | Software Engineer",
     description:
-      "Sugar Catのポートフォリオサイト。技術記事、登壇資料、制作物を公開しています。",
+      "Sugar Catの技術記事、登壇資料、制作物を公開しています。",
     path: "/",
   }),
   generatePersonSchema(),
