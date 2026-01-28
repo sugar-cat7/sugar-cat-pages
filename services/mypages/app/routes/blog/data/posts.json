@@ -1,5 +1,14 @@
 [
   {
+    "id": "hatena-2026-01-28-090000",
+    "title": "Cloudflare WorkersでDiscord APIのRatelimitに立ち向かう",
+    "description": "※この記事は個人開発の遊びの内容です。\nサービスの前提\nVTuberの配信情報を通知するDiscordBot\n導入サーバー数: 約450サーバー(2026/1/28現在)\n通知頻度: 1分ごとに配信情報を全Discordサーバーへと配信する(昔ながらのCron方式)\n関連資料：\n speakerdeck.com\n speakerdeck.com\nzenn.dev\nDiscord APIの制限\nDi...",
+    "url": "https://blog.sugar-cat.dev/entry/2026/01/28/090000",
+    "source": "hatena",
+    "publishedAt": "2026-01-28",
+    "thumbnail": "https://cdn.image.st-hatena.com/image/scale/6c9000843bb5394e8979869fd75e2123862cc292/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fs%2Fsugar-cat-dev%2F20260128%2F20260128035558.png"
+  },
+  {
     "id": "hatena-2026-01-21-093744",
     "title": "Raw ChartでKustomize管理のマニフェストをそのままHelmfile管理にする",
     "description": "Raw Chartは、Helmfile から任意の Kubernetes マニフェストをデプロイするための汎用的な Helm Chart です。\nbedag.github.io\n既存の Kustomize 構成をとりあえず Helmfile 管理に移したい場合や、\n諸事情により Helmfile の統合機能を素直に使えない場合（ConfigMapGenerator を使っているなど）にも利用できま...",
