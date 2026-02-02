@@ -1,5 +1,14 @@
 [
   {
+    "id": "hatena-2026-02-02-100000",
+    "title": "Vercel OIDCを利用してGoogle Cloudリソースへアクセスする",
+    "description": "自分の昔の記憶(2022年頃)ではVercelから Google Cloudへの認証に Workload Identity Federation が使えず、Service Account の秘密鍵をVercelの環境変数に登録する必要があり微妙だなーと思っていました。\n久しぶりに調べてみたところ Vercel OIDC がサポートされており、秘密鍵なしでフェデレーションできるようになっていました。...",
+    "url": "https://blog.sugar-cat.dev/entry/2026/02/02/100000",
+    "source": "hatena",
+    "publishedAt": "2026-02-02",
+    "thumbnail": "https://cdn.image.st-hatena.com/image/scale/3e906144dea45432e7998716b483ce1522acb37c/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fs%2Fsugar-cat-dev%2F20260131%2F20260131205204.png"
+  },
+  {
     "id": "hatena-2026-01-28-090000",
     "title": "Cloudflare WorkersでDiscord APIのRatelimitに立ち向かう",
     "description": "※この記事は個人開発の遊びの内容です。\nサービスの前提\nVTuberの配信情報を通知するDiscordBot\n導入サーバー数: 約450サーバー(2026/1/28現在)\n通知頻度: 1分ごとに配信情報を全Discordサーバーへと配信する(昔ながらのCron方式)\n関連資料：\n speakerdeck.com\n speakerdeck.com\nzenn.dev\nDiscord APIの制限\nDi...",
