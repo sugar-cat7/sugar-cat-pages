@@ -1,5 +1,14 @@
 [
   {
+    "id": "hatena-2026-02-17-100000",
+    "title": "Better AuthのEmail OTP + DrizzleでメールOTP認証",
+    "description": "Better Authを利用したサービスでGoogleログイン後に Email OTP（6桁のワンタイムパスワード）でメールアドレスの所有確認を挟みたいな〜という場面があり、\nBetter Auth の emailOTP プラグインと Drizzle Adapter を組み合わせて、OAuth ログイン後のメール認証を実装を楽できたのでメモとして残す。\n昨今色々なサービスで使われているEmail ...",
+    "url": "https://blog.sugar-cat.dev/entry/2026/02/17/100000",
+    "source": "hatena",
+    "publishedAt": "2026-02-17",
+    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901354958720/1771290004"
+  },
+  {
     "id": "zenn-d735e7dfcc5cbf",
     "title": "リアルタイム音声AI × アバター面接で場数を増やす~BA-SUU開発記~",
     "description": "",
