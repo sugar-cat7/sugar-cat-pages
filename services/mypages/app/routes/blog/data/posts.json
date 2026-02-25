@@ -1,5 +1,14 @@
 [
   {
+    "id": "hatena-2026-02-24-100000",
+    "title": "Gemini Live API + DeepgramでリアルタイムAI音声会話をする",
+    "description": "GeminiのLive API は音声をそのまま受け取って会話できて便利なんですが、日本語で使っているとinputTranscription が長時間発話で不安定になる問題がありました。\nユーザー側のターンで発話での応答が遅延・欠落してしまう問題が。。。\ninputTranscriptionを結合してみてみるとなんか、発話時間？が一定を超えたらめちゃくちゃバグってる。\n抜粋\n\n生産、生産、生産、生...",
+    "url": "https://blog.sugar-cat.dev/entry/2026/02/24/100000",
+    "source": "hatena",
+    "publishedAt": "2026-02-24",
+    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901354971021/1771894802"
+  },
+  {
     "id": "hatena-2026-02-17-100000",
     "title": "Better AuthのEmail OTP + DrizzleでメールOTP認証",
     "description": "Better Authを利用したサービスでGoogleログイン後に Email OTP（6桁のワンタイムパスワード）でメールアドレスの所有確認を挟みたいな〜という場面があり、\nBetter Auth の emailOTP プラグインと Drizzle Adapter を組み合わせて、OAuth ログイン後のメール認証を実装を楽できたのでメモとして残す。\n昨今色々なサービスで使われているEmail ...",
