@@ -68,9 +68,9 @@ test("アイテム作成フロー全体", async ({ page }) => {
 
 ## 推奨ファイル構成
 
-- `services/web/e2e/auth.setup.ts`
-- `services/web/e2e/*.spec.ts`
-- `services/web/playwright.config.ts`
+- `services/mypages/e2e/auth.setup.ts`
+- `services/mypages/e2e/*.spec.ts`
+- `services/mypages/playwright.config.ts`
 
 ## 参考（一次情報）
 

@@ -21,4 +21,3 @@ description: t_wadaベースのテスト駆動開発戦略を使い、Red-Green-
 
 - `docs/web-frontend/twada-tdd.md` - t_wadaベースTDD戦略（本プロジェクト向け）
 - `docs/web-frontend/unit-testing.md` - Vitest運用、テーブルドリブンテスト
-- `docs/web-frontend/api-testing.md` - API統合テスト

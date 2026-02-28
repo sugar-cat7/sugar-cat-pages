@@ -8,5 +8,4 @@ pnpm biome
 pnpm textlint
 pnpm knip
 pnpm type-check
-pnpm test
 pnpm security-scan

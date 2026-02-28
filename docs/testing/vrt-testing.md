@@ -7,7 +7,7 @@
 
 ## 対象
 
-- `services/web/vrt/storybook.spec.ts`
+- `services/mypages/vrt/storybook.spec.ts`
 - Storybook ストーリー（デザインシステム、主要UI）
 
 ## 実装ルール
@@ -30,8 +30,8 @@
 
 ## 実行コマンド
 
-- `pnpm --filter web vrt`
-- 更新: `pnpm --filter web vrt:update`
+- `pnpm --filter mypages vrt`
+- 更新: `pnpm --filter mypages vrt:update`
 
 ## 参考（一次情報）
 

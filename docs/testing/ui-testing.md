@@ -7,8 +7,8 @@
 
 ## 対象
 
-- `services/web/shared/components/**`
-- `services/web/features/**` の Container/Presentational 境界
+- `services/mypages/app/shared/components/**`
+- `services/mypages/app/features/**` の Container/Presentational 境界
 
 ## 実装ルール
 
@@ -34,10 +34,10 @@
 
 ## 実行コマンド
 
-- `pnpm --filter web vitest run`
+- `pnpm --filter mypages vitest run`
 
 ## 参考（一次情報）
 
 - Testing Library Guiding Principles: https://testing-library.com/docs/guiding-principles
 - Testing Library Query Priority: https://testing-library.com/docs/queries/about/#priority
-- Next.js Testing（Vitest + Testing Library）: https://nextjs.org/docs/app/guides/testing/vitest
+- React Router Testing: https://reactrouter.com/how-to/test

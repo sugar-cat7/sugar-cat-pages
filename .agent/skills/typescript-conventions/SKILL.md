@@ -11,4 +11,4 @@ description: Zod Schema Firstによる型定義、satisfiesオペレータ、型
 
 # 参照ドキュメント
 
-- `docs/web-frontend/typescript.md` - Schema-First Development、satisfies、型安全パターン
+- `docs/typescript.md` - Schema-First Development、satisfies、型安全パターン
