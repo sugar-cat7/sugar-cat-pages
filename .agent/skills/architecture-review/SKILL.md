@@ -12,7 +12,7 @@ description: Use when generating or modifying code to ensure it follows project 
 作業開始前に以下のドキュメントを必ず参照してください:
 
 1. **CLAUDE.md** - プロジェクト全体のガイドライン
-2. **docs/architecture.md** - フロントエンドアーキテクチャ
+2. **docs/frontend-architecture.md** - フロントエンドアーキテクチャ
 3. **docs/css.md** - Tailwind CSS ガイドライン
 4. **docs/error-handling.md** - エラーハンドリング規約
 5. **docs/typescript.md** - TypeScript 規約
@@ -33,7 +33,7 @@ description: Use when generating or modifying code to ensure it follows project 
 ### フロントエンドアーキテクチャ
 - Feature-based アプローチ
 - Container/Presentational パターン
-- Next.js App Router と features/pages の 1:1 マッピング
+- React Router v7 (Framework Mode) と features/pages の 1:1 マッピング
 
 ### CSS & スタイリング
 - Tailwind CSS v4 (CSS-first configuration)
