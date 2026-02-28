@@ -1,5 +1,14 @@
 [
   {
+    "id": "hatena-2026-02-28-211052",
+    "title": "Claude Code御一行様用 個人的設定",
+    "description": "この記事は99%手書きです。\n自分はClaude(Opus)を基本は使用しつつ、レビューにCodex(5.3)とGitHub Copilotを混ぜて使ってます。よくあるやつです。\n最近はユーザー側であれこれ設定しなくてもそれなりに良い感じに動きます。とはいえ設定した方が効率よく進むのも事実なので、最低限の整備はしておいて損はありません。新しい盆栽感がありますね。\n汎用的なやつ\n汎用的なPlugin...",
+    "url": "https://blog.sugar-cat.dev/entry/2026/02/28/211052",
+    "source": "hatena",
+    "publishedAt": "2026-02-28",
+    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901359503973/1772280652"
+  },
+  {
     "id": "hatena-2026-02-24-100000",
     "title": "Gemini Live API + DeepgramでリアルタイムAI音声会話をする",
     "description": "GeminiのLive API は音声をそのまま受け取って会話できて便利なんですが、日本語で使っているとinputTranscription が長時間発話で不安定になる問題がありました。\nユーザー側のターンで発話での応答が遅延・欠落してしまう問題が。。。\ninputTranscriptionを結合してみてみるとなんか、発話時間？が一定を超えたらめちゃくちゃバグってる。\n抜粋\n\n生産、生産、生産、生...",
