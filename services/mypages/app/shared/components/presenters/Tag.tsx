@@ -21,7 +21,7 @@ export function Tag({ variant = "default", children }: TagProps) {
     <span
       className={cn(
         "inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-medium",
-        variantStyles[variant]
+        variantStyles[variant],
       )}
     >
       {children}

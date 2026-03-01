@@ -4,7 +4,8 @@
     "interface": true,
     "type": true
   },
-  "ignoreBinaries": ["biome"],
+  "ignoreBinaries": [],
+  "ignoreUnresolved": ["\\.\\/.+types/.+"],
   "tags": ["-lintignore"],
   "workspaces": {
     ".": {

@@ -57,4 +57,3 @@ export class AppError<TCode extends ErrorCode = ErrorCode> extends BaseError {
     this.context = opts.context;
   }
 }
-

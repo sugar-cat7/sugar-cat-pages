@@ -61,10 +61,13 @@ describe("runWithLogContextAsync", () => {
   });
 
   it("returns value from async callback", async () => {
-    const result = await runWithLogContextAsync({ traceId: "trace-123" }, async () => {
-      await Promise.resolve();
-      return "async-result";
-    });
+    const result = await runWithLogContextAsync(
+      { traceId: "trace-123" },
+      async () => {
+        await Promise.resolve();
+        return "async-result";
+      },
+    );
 
     expect(result).toBe("async-result");
   });
@@ -115,10 +118,13 @@ describe("withRequestContext", () => {
   });
 
   it("works with async functions", async () => {
-    const result = await withRequestContext({ traceId: "trace-123" }, async () => {
-      await Promise.resolve();
-      return getLogContext()?.traceId;
-    });
+    const result = await withRequestContext(
+      { traceId: "trace-123" },
+      async () => {
+        await Promise.resolve();
+        return getLogContext()?.traceId;
+      },
+    );
 
     expect(result).toBe("trace-123");
   });

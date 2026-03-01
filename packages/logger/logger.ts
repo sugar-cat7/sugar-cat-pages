@@ -91,7 +91,6 @@ export class Logger {
       error,
     );
 
-    // biome-ignore lint/suspicious/noConsole: Logger needs direct console access
     console.log(JSON.stringify(entry));
   }
 
@@ -181,7 +180,6 @@ class ContextLogger {
       error,
     );
 
-    // biome-ignore lint/suspicious/noConsole: Logger needs direct console access
     console.log(JSON.stringify(entry));
   }
 

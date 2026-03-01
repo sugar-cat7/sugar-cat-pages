@@ -1,6 +1,6 @@
+import type { Talk } from "@my-pages/content-fetcher";
 import { SectionHeading } from "~/shared/components/presenters/SectionHeading";
 import { cn } from "~/shared/lib/utils";
-import type { Talk } from "@my-pages/content-fetcher";
 
 type LatestTalksSectionProps = {
   talks: Talk[];
@@ -41,7 +41,7 @@ export function LatestTalksSection({ talks }: LatestTalksSectionProps) {
                   className={cn(
                     "w-full h-full object-cover",
                     "transition-all duration-fast",
-                    "group-hover:scale-105"
+                    "group-hover:scale-105",
                   )}
                 />
               ) : (
@@ -50,7 +50,7 @@ export function LatestTalksSection({ talks }: LatestTalksSectionProps) {
                     "w-full h-full flex items-center justify-center",
                     "bg-gradient-to-br from-mint/10 via-mint/5 to-sky/10",
                     "transition-all duration-fast",
-                    "group-hover:scale-105"
+                    "group-hover:scale-105",
                   )}
                 >
                   <svg

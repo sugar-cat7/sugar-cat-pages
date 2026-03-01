@@ -1,7 +1,7 @@
-export { BlogPostSchema, type BlogPost } from "./blog-post";
+export { type BlogPost, BlogPostSchema } from "./blog-post";
 export {
-  TalkSchema,
-  TalkMetadataSchema,
   type Talk,
   type TalkMetadata,
+  TalkMetadataSchema,
+  TalkSchema,
 } from "./talk";

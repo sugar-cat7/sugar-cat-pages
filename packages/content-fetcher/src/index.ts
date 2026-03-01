@@ -1,15 +1,13 @@
 // Types
-export type { BlogPost, Talk, TalkMetadata } from "./schemas";
-
-// Schemas
-export { BlogPostSchema, TalkSchema, TalkMetadataSchema } from "./schemas";
-
-// Fetchers
-export {
-  fetchZennPosts,
-  fetchHatenaPosts,
-  fetchSpeakerDeckTalks,
-} from "./fetchers";
 
 // Config
-export { sources, talksMetadata, manualSlides } from "./config";
+export { manualSlides, sources, talksMetadata } from "./config";
+// Fetchers
+export {
+  fetchHatenaPosts,
+  fetchSpeakerDeckTalks,
+  fetchZennPosts,
+} from "./fetchers";
+export type { BlogPost, Talk, TalkMetadata } from "./schemas";
+// Schemas
+export { BlogPostSchema, TalkMetadataSchema, TalkSchema } from "./schemas";

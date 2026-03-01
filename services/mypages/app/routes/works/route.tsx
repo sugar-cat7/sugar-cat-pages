@@ -1,6 +1,6 @@
+import { generateMeta } from "~/shared/lib/seo";
 import type { Route } from "./+types/route";
 import { WorksPage } from "./pages/containers/WorksPage";
-import { generateMeta } from "~/shared/lib/seo";
 
 export const meta: Route.MetaFunction = () =>
   generateMeta({

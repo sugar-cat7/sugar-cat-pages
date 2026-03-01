@@ -1,5 +1,5 @@
-import { z } from "zod";
 import { BlogPostSchema, TalkSchema } from "@my-pages/content-fetcher/schemas";
+import { z } from "zod";
 
 /**
  * Validates and parses blog posts data from JSON import.

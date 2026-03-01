@@ -1,6 +1,6 @@
-import { ArticleCard } from "../../components/presenters/ArticleCard";
-import { Pagination } from "~/shared/components/presenters/Pagination";
 import type { BlogPost } from "@my-pages/content-fetcher";
+import { Pagination } from "~/shared/components/presenters/Pagination";
+import { ArticleCard } from "../../components/presenters/ArticleCard";
 
 type BlogPagePresenterProps = {
   posts: BlogPost[];

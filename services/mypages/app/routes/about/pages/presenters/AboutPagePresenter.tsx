@@ -23,7 +23,9 @@ export function AboutPagePresenter({ profile }: AboutPagePresenterProps) {
           <ProfileSection profile={profile} />
           <BiographySection biography={profile.biography} />
           <CareerSection career={profile.career} />
-          <CertificationsSection certificationGroups={profile.certificationGroups} />
+          <CertificationsSection
+            certificationGroups={profile.certificationGroups}
+          />
         </div>
       </div>
     </div>

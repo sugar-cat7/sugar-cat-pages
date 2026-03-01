@@ -1,6 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "local>sugar-cat7/sugar-cat-pages:renovate"
-  ]
+  "extends": ["local>sugar-cat7/sugar-cat-pages:renovate"]
 }

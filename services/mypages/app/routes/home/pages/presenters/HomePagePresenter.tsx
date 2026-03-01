@@ -1,7 +1,7 @@
+import type { BlogPost, Talk } from "@my-pages/content-fetcher";
 import { HeroSection } from "../../components/presenters/HeroSection";
 import { LatestPostsSection } from "../../components/presenters/LatestPostsSection";
 import { LatestTalksSection } from "../../components/presenters/LatestTalksSection";
-import type { BlogPost, Talk } from "@my-pages/content-fetcher";
 
 type HomePagePresenterProps = {
   posts: BlogPost[];

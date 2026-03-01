@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router";
-import { TalksPagePresenter } from "../presenters/TalksPagePresenter";
-import talksJson from "../../data/talks.json";
 import { validateTalks } from "~/shared/lib/validate-json";
+import talksJson from "../../data/talks.json";
+import { TalksPagePresenter } from "../presenters/TalksPagePresenter";
 
 const talks = validateTalks(talksJson);
 const ITEMS_PER_PAGE = 50;
@@ -12,7 +12,7 @@ export function TalksPage() {
   const totalPages = Math.ceil(talks.length / ITEMS_PER_PAGE);
   const paginatedTalks = talks.slice(
     (page - 1) * ITEMS_PER_PAGE,
-    page * ITEMS_PER_PAGE
+    page * ITEMS_PER_PAGE,
   );
 
   return (

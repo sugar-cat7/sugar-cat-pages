@@ -1,4 +1,4 @@
-import { useTheme, type Theme } from "~/shared/lib/theme";
+import { type Theme, useTheme } from "~/shared/lib/theme";
 import { cn } from "~/shared/lib/utils";
 
 const themeOptions: { value: Theme; label: string }[] = [
@@ -94,7 +94,7 @@ export function ThemeToggle() {
         "p-2 rounded-md",
         "text-foreground-soft hover:text-foreground",
         "hover:bg-muted",
-        "transition-colors duration-fast"
+        "transition-colors duration-fast",
       )}
       aria-label={`Current theme: ${currentOption?.label}. Click to change.`}
     >

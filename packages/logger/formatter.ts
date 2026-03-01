@@ -118,11 +118,22 @@ export function formatLogEntry(
 export function createTransport(
   config: LoggerConfig,
   getContext?: () => LogContext | undefined,
-): (severity: LogSeverity, message: string, data?: Record<string, unknown>, error?: Error) => void {
+): (
+  severity: LogSeverity,
+  message: string,
+  data?: Record<string, unknown>,
+  error?: Error,
+) => void {
   return (severity, message, data, error) => {
     const context = getContext?.();
-    const entry = formatLogEntry(severity, message, config, context, data, error);
-    // biome-ignore lint/suspicious/noConsole: Logger needs direct console access
+    const entry = formatLogEntry(
+      severity,
+      message,
+      config,
+      context,
+      data,
+      error,
+    );
     console.log(JSON.stringify(entry));
   };
 }

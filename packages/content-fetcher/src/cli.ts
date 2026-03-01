@@ -1,25 +1,24 @@
-import { writeFileSync, mkdirSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
-import type { Result } from "@my-pages/errors";
-import type { BaseError } from "@my-pages/errors";
-import {
-  fetchZennPosts,
-  fetchHatenaPosts,
-  fetchSpeakerDeckTalks,
-  fetchOgImage,
-} from "./fetchers";
+import type { BaseError, Result } from "@my-pages/errors";
 import { manualPosts } from "./config";
+import {
+  fetchHatenaPosts,
+  fetchOgImage,
+  fetchSpeakerDeckTalks,
+  fetchZennPosts,
+} from "./fetchers";
 import type { BlogPost, Talk } from "./schemas";
 
 const OUTPUT_BASE = process.env.OUTPUT_DIR ?? resolve(__dirname, "../../..");
 
 const BLOG_OUTPUT_PATH = resolve(
   OUTPUT_BASE,
-  "services/mypages/app/routes/blog/data/posts.json"
+  "services/mypages/app/routes/blog/data/posts.json",
 );
 const TALKS_OUTPUT_PATH = resolve(
   OUTPUT_BASE,
-  "services/mypages/app/routes/talks/data/talks.json"
+  "services/mypages/app/routes/talks/data/talks.json",
 );
 
 async function generateBlogPosts(): Promise<Result<BlogPost[], BaseError>> {
@@ -50,14 +49,14 @@ async function generateBlogPosts(): Promise<Result<BlogPost[], BaseError>> {
       source: "external" as const,
       publishedAt: post.publishedAt,
       thumbnail: post.thumbnail ?? (await fetchOgImage(post.url)),
-    }))
+    })),
   );
   console.log(`  Found ${externalPosts.length} external posts`);
 
   // Merge and sort by publishedAt descending
   const allPosts = [...zennPosts, ...hatenaPosts, ...externalPosts].sort(
     (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 
   return { val: allPosts };

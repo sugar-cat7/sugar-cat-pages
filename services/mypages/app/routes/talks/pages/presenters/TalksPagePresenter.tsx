@@ -1,6 +1,6 @@
-import { TalkCard } from "../../components/presenters/TalkCard";
-import { Pagination } from "~/shared/components/presenters/Pagination";
 import type { Talk } from "@my-pages/content-fetcher";
+import { Pagination } from "~/shared/components/presenters/Pagination";
+import { TalkCard } from "../../components/presenters/TalkCard";
 
 type TalksPagePresenterProps = {
   talks: Talk[];

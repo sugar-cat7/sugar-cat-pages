@@ -58,15 +58,11 @@ export const profile = {
     },
     {
       year: "2023",
-      activities: [
-        { title: "転職(Sier→事業会社)" },
-      ],
+      activities: [{ title: "転職(Sier→事業会社)" }],
     },
     {
       year: "2022",
-      activities: [
-        { title: "筑波大学大学院修了→Sier" },
-      ],
+      activities: [{ title: "筑波大学大学院修了→Sier" }],
     },
     {
       year: "2021",
