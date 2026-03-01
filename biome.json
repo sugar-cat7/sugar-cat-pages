@@ -28,7 +28,10 @@
       "!**/*.css",
       "!**/tsconfig.json",
       "!**/meta/**/*",
-      "!**/coverage/**/*"
+      "!**/coverage/**/*",
+      "!**/worker-configuration.d.ts",
+      "!**/.wrangler/**/*",
+      "!**/.react-router/**/*"
     ]
   },
   "formatter": {
@@ -42,6 +45,15 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "warn"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "warn"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "warn"
+      },
       "style": {
         "noParameterAssign": "error",
         "useAsConstAssertion": "error",

@@ -1,19 +1,7 @@
 {
   "packageRules": [
     {
-      "matchPackageNames": [
-        "biome",
-        "@biomejs/biome",
-        "eslint",
-        "prettier",
-        "stylelint"
-      ],
-      "matchPackagePatterns": [
-        "^eslint-",
-        "^@eslint",
-        "^prettier-",
-        "^stylelint-"
-      ],
+      "matchPackageNames": ["@biomejs/biome"],
       "groupName": "linters"
     }
   ]

@@ -1,10 +1,7 @@
-import { HomePagePresenter } from "../presenters/HomePagePresenter";
+import { validatePosts, validateTalks } from "~/shared/lib/validate-json";
 import postsJson from "../../../blog/data/posts.json";
 import talksJson from "../../../talks/data/talks.json";
-import {
-  validatePosts,
-  validateTalks,
-} from "~/shared/lib/validate-json";
+import { HomePagePresenter } from "../presenters/HomePagePresenter";
 
 const posts = validatePosts(postsJson);
 const talks = validateTalks(talksJson);

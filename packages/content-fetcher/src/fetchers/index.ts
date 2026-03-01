@@ -1,4 +1,4 @@
-export { fetchZennPosts } from "./zenn";
 export { fetchHatenaPosts } from "./hatena";
-export { fetchSpeakerDeckTalks } from "./speakerdeck";
 export { fetchOgImage } from "./og-image";
+export { fetchSpeakerDeckTalks } from "./speakerdeck";
+export { fetchZennPosts } from "./zenn";

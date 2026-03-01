@@ -1,12 +1,12 @@
-import Parser from "rss-parser";
 import {
-  type Result,
-  Ok,
-  Err,
   AppError,
   type BaseError,
+  Err,
+  Ok,
+  type Result,
 } from "@my-pages/errors";
-import { sources, talksMetadata, manualSlides } from "../config";
+import Parser from "rss-parser";
+import { manualSlides, sources, talksMetadata } from "../config";
 import type { Talk } from "../schemas";
 import { fetchOgImage } from "./og-image";
 
@@ -40,7 +40,7 @@ export async function fetchSpeakerDeckTalks(): Promise<
       new AppError({
         code: "INTERNAL_SERVER_ERROR",
         message: "Failed to fetch SpeakerDeck RSS feed",
-      })
+      }),
     );
   }
 
@@ -70,12 +70,12 @@ export async function fetchSpeakerDeckTalks(): Promise<
       id: `manual-${index}-${slide.slideUrl.replace(/[^a-z0-9]/gi, "-")}`,
       ...slide,
       thumbnail: slide.thumbnail ?? (await fetchOgImage(slide.slideUrl)),
-    }))
+    })),
   );
 
   const talks = [...rssTalks, ...manualTalks].sort(
     (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 
   return Ok(talks);

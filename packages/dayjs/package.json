@@ -19,6 +19,7 @@
   "keywords": [],
   "scripts": {
     "build": "tsup",
+    "type-check": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run"
   },

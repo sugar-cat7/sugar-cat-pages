@@ -5,7 +5,7 @@ export type ResolvedTheme = "light" | "dark";
 
 const STORAGE_KEY = "theme-preference";
 
-let listeners: Set<() => void> = new Set();
+const listeners: Set<() => void> = new Set();
 let cachedTheme: Theme = "system";
 
 function getSystemTheme(): ResolvedTheme {

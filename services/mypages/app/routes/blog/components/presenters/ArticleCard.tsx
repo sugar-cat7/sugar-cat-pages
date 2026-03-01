@@ -1,5 +1,5 @@
-import { cn } from "~/shared/lib/utils";
 import type { BlogPost } from "@my-pages/content-fetcher";
+import { cn } from "~/shared/lib/utils";
 
 type ArticleCardProps = {
   post: BlogPost;
@@ -40,11 +40,15 @@ export function ArticleCard({ post }: ArticleCardProps) {
                 ? "from-sky/20 via-sky/10 to-mint/20"
                 : post.source === "hatena"
                   ? "from-coral/20 via-coral/10 to-amber/20"
-                  : "from-violet/20 via-violet/10 to-sky/20"
+                  : "from-violet/20 via-violet/10 to-sky/20",
             )}
           >
             <span className="text-4xl opacity-50">
-              {post.source === "zenn" ? "Z" : post.source === "hatena" ? "B" : "E"}
+              {post.source === "zenn"
+                ? "Z"
+                : post.source === "hatena"
+                  ? "B"
+                  : "E"}
             </span>
           </div>
         )}

@@ -1,9 +1,9 @@
 import {
-  type Result,
-  Ok,
-  Err,
   AppError,
   type BaseError,
+  Err,
+  Ok,
+  type Result,
 } from "@my-pages/errors";
 import { sources } from "../config";
 import type { BlogPost } from "../schemas";
@@ -26,9 +26,7 @@ interface ZennApiResponse {
   next_page: number | null;
 }
 
-export async function fetchZennPosts(): Promise<
-  Result<BlogPost[], BaseError>
-> {
+export async function fetchZennPosts(): Promise<Result<BlogPost[], BaseError>> {
   const allArticles: ZennArticle[] = [];
   let page = 1;
 
@@ -41,7 +39,7 @@ export async function fetchZennPosts(): Promise<
         new AppError({
           code: "INTERNAL_SERVER_ERROR",
           message: "Failed to fetch from Zenn API: Network error",
-        })
+        }),
       );
     }
 
@@ -50,7 +48,7 @@ export async function fetchZennPosts(): Promise<
         new AppError({
           code: "INTERNAL_SERVER_ERROR",
           message: `Zenn API error: ${response.status}`,
-        })
+        }),
       );
     }
 
@@ -74,7 +72,7 @@ export async function fetchZennPosts(): Promise<
         publishedAt: article.published_at.split("T")[0],
         thumbnail,
       };
-    })
+    }),
   );
 
   return Ok(posts);

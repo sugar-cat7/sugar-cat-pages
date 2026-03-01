@@ -27,6 +27,9 @@ next-env.d.ts
 # VS Code
 .vscode
 
+# aqua
+.aqua
+
 .turbo
 
 dist

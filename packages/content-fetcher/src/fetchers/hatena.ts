@@ -1,11 +1,11 @@
-import Parser from "rss-parser";
 import {
-  type Result,
-  Ok,
-  Err,
   AppError,
   type BaseError,
+  Err,
+  Ok,
+  type Result,
 } from "@my-pages/errors";
+import Parser from "rss-parser";
 import { sources } from "../config";
 import type { BlogPost } from "../schemas";
 
@@ -36,7 +36,7 @@ export async function fetchHatenaPosts(): Promise<
       new AppError({
         code: "INTERNAL_SERVER_ERROR",
         message: "Failed to fetch Hatena RSS feed",
-      })
+      }),
     );
   }
 

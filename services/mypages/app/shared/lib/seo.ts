@@ -62,7 +62,9 @@ export function generateMeta({
 /**
  * Generate Person schema JSON-LD for homepage
  */
-export function generatePersonSchema(): { "script:ld+json": Record<string, unknown> } {
+export function generatePersonSchema(): {
+  "script:ld+json": Record<string, unknown>;
+} {
   return {
     "script:ld+json": {
       "@context": "https://schema.org",
@@ -82,7 +84,9 @@ export function generatePersonSchema(): { "script:ld+json": Record<string, unkno
 /**
  * Generate WebSite schema JSON-LD
  */
-export function generateWebSiteSchema(): { "script:ld+json": Record<string, unknown> } {
+export function generateWebSiteSchema(): {
+  "script:ld+json": Record<string, unknown>;
+} {
   return {
     "script:ld+json": {
       "@context": "https://schema.org",

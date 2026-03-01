@@ -130,8 +130,7 @@ describe("createTraceContext", () => {
   it("prefers X-Cloud-Trace-Context over traceparent", () => {
     const result = createTraceContext({
       "x-cloud-trace-context": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4/1;o=1",
-      traceparent:
-        "00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01",
+      traceparent: "00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01",
     });
 
     expect(result?.traceId).toBe("a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4");
@@ -139,8 +138,7 @@ describe("createTraceContext", () => {
 
   it("falls back to traceparent when X-Cloud-Trace-Context is missing", () => {
     const result = createTraceContext({
-      traceparent:
-        "00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01",
+      traceparent: "00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01",
     });
 
     expect(result?.traceId).toBe("0af7651916cd43dd8448eb211c80319c");
@@ -150,8 +148,7 @@ describe("createTraceContext", () => {
   it("falls back to traceparent when X-Cloud-Trace-Context is invalid", () => {
     const result = createTraceContext({
       "x-cloud-trace-context": "invalid",
-      traceparent:
-        "00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01",
+      traceparent: "00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01",
     });
 
     expect(result?.traceId).toBe("0af7651916cd43dd8448eb211c80319c");

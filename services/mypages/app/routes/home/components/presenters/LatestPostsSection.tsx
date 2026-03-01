@@ -1,6 +1,6 @@
+import type { BlogPost } from "@my-pages/content-fetcher";
 import { SectionHeading } from "~/shared/components/presenters/SectionHeading";
 import { cn } from "~/shared/lib/utils";
-import type { BlogPost } from "@my-pages/content-fetcher";
 
 type LatestPostsSectionProps = {
   posts: BlogPost[];
@@ -41,7 +41,7 @@ export function LatestPostsSection({ posts }: LatestPostsSectionProps) {
                       className={cn(
                         "w-full h-full object-cover",
                         "transition-all duration-fast",
-                        "group-hover:scale-105"
+                        "group-hover:scale-105",
                       )}
                     />
                   ) : (
@@ -53,7 +53,7 @@ export function LatestPostsSection({ posts }: LatestPostsSectionProps) {
                         "group-hover:scale-105",
                         post.source === "zenn"
                           ? "from-sky/20 via-sky/10 to-mint/20"
-                          : "from-coral/20 via-coral/10 to-amber/20"
+                          : "from-coral/20 via-coral/10 to-amber/20",
                       )}
                     >
                       <span className="text-4xl opacity-50">

@@ -10,7 +10,8 @@ export const manualPosts: Array<{
   thumbnail?: string;
 }> = [
   {
-    title: "Datadogのエラートラッキングにおける効果的なアラート設計について考える",
+    title:
+      "Datadogのエラートラッキングにおける効果的なアラート設計について考える",
     description: "",
     url: "https://sre-magazine.net/articles/7/sugar_cat/",
     publishedAt: "2025-03-24",

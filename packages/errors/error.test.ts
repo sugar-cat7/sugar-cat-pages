@@ -123,29 +123,32 @@ describe("AppError", () => {
   // ============================================
 
   describe("status", () => {
-    const statusTestCases: Array<{ code: ErrorCode; expectedStatus: number }> = [
-      { code: "BAD_REQUEST", expectedStatus: 400 },
-      { code: "UNAUTHORIZED", expectedStatus: 403 },
-      { code: "FORBIDDEN", expectedStatus: 403 },
-      { code: "DISABLED", expectedStatus: 403 },
-      { code: "INSUFFICIENT_PERMISSIONS", expectedStatus: 403 },
-      { code: "USAGE_EXCEEDED", expectedStatus: 403 },
-      { code: "NOT_FOUND", expectedStatus: 404 },
-      { code: "METHOD_NOT_ALLOWED", expectedStatus: 405 },
-      { code: "NOT_UNIQUE", expectedStatus: 409 },
-      { code: "PRECONDITION_FAILED", expectedStatus: 412 },
-      { code: "RATE_LIMITED", expectedStatus: 429 },
-      { code: "INTERNAL_SERVER_ERROR", expectedStatus: 500 },
-    ];
+    const statusTestCases: Array<{ code: ErrorCode; expectedStatus: number }> =
+      [
+        { code: "BAD_REQUEST", expectedStatus: 400 },
+        { code: "UNAUTHORIZED", expectedStatus: 403 },
+        { code: "FORBIDDEN", expectedStatus: 403 },
+        { code: "DISABLED", expectedStatus: 403 },
+        { code: "INSUFFICIENT_PERMISSIONS", expectedStatus: 403 },
+        { code: "USAGE_EXCEEDED", expectedStatus: 403 },
+        { code: "NOT_FOUND", expectedStatus: 404 },
+        { code: "METHOD_NOT_ALLOWED", expectedStatus: 405 },
+        { code: "NOT_UNIQUE", expectedStatus: 409 },
+        { code: "PRECONDITION_FAILED", expectedStatus: 412 },
+        { code: "RATE_LIMITED", expectedStatus: 429 },
+        { code: "INTERNAL_SERVER_ERROR", expectedStatus: 500 },
+      ];
 
-    it.each(statusTestCases)(
-      "$code は HTTP $expectedStatus にマッピングされる",
-      ({ code, expectedStatus }) => {
-        const error = new AppError({ message: "Test", code });
+    it.each(
+      statusTestCases,
+    )("$code は HTTP $expectedStatus にマッピングされる", ({
+      code,
+      expectedStatus,
+    }) => {
+      const error = new AppError({ message: "Test", code });
 
-        expect(error.status).toBe(expectedStatus);
-      },
-    );
+      expect(error.status).toBe(expectedStatus);
+    });
   });
 
   // ============================================
@@ -209,8 +212,7 @@ describe("AppError", () => {
       },
       {
         name: "スタックトレースを持つ",
-        check: (error: AppError) =>
-          error.stack !== undefined && error.stack.includes("AppError"),
+        check: (error: AppError) => error.stack?.includes("AppError") ?? false,
         expected: true,
       },
     ];

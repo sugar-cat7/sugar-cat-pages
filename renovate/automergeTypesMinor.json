@@ -1,9 +1,7 @@
 {
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "^@types/"
-      ],
+      "matchPackagePatterns": ["^@types/"],
       "automerge": true,
       "major": {
         "automerge": false
