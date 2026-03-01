@@ -149,23 +149,38 @@ pre-push:
 
 ### Phase 7: CI（pr-check.yaml）修正
 
-**7-1. パッケージ名修正**: `@mypages/errors` → `@my-pages/errors`, `@mypages/dayjs` → `@my-pages/dayjs`
+**7-1. パッケージ名修正（済）**: `@mypages/errors` → `@my-pages/errors`, `@mypages/dayjs` → `@my-pages/dayjs`
 
-**7-2. biome-check ジョブを aqua ベースに変更**（pnpm install 不要に）:
+**7-2. biome-check ジョブ: aqua → pnpm に変更**
+
+aqua registry が biome 2.x のリリースアセットを解決できない（`github_release package requires asset` エラー）。
+biome は既に `@biomejs/biome` として root devDependency に追加済みなので、pnpm install 経由で biome を実行する:
 ```yaml
 biome-check:
   runs-on: ubuntu-latest
   timeout-minutes: 5
   steps:
     - uses: actions/checkout@v6
-    - uses: aquaproj/aqua-installer@v3
+    - name: Set up pnpm
+      uses: pnpm/action-setup@v4
       with:
-        aqua_version: v2.48.1
+        version: 10.28.0
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
     - name: Biome Check
-      run: biome check .
+      run: pnpm biome
 ```
 
-**7-3. コメントアウト済みの test ジョブ**: パッケージ名だけ修正して残す（復活は別タスク）
+**7-3. type-check ジョブ: content-fetcher のビルド追加**
+
+mypages が `@my-pages/content-fetcher` に依存しているが、CIでビルドされていないため `Cannot find module` エラー。
+個別の `--filter` 指定を `pnpm turbo build --filter='./packages/*'` に置き換え、全パッケージを確実にビルド:
+```yaml
+      - name: Build packages
+        run: pnpm turbo build --filter='./packages/*'
+```
+
+**7-4. コメントアウト済みの test ジョブ**: パッケージ名だけ修正して残す（復活は別タスク）
 
 ---
 
