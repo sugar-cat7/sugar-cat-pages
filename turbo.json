@@ -1,13 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "globalPassThroughEnv": [
-
-  ],
+  "globalPassThroughEnv": [],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "outputs": ["dist/**"],
       "cache": false
     },
     "type-check": {
@@ -19,30 +17,7 @@
       "cache": false,
       "persistent": true
     },
-    "dev:subscriber": {
-      "cache": false,
-      "persistent": true
-    },
-    "biome:check": {
-      "cache": false
-    },
-    "biome:format": {
-      "dependsOn": ["biome:check"],
-      "cache": false
-    },
-    "biome:unsafe-fix": {
-      "dependsOn": ["biome:format"],
-      "cache": false
-    },
-    "biome:lint": {
-      "dependsOn": ["biome:unsafe-fix"],
-      "cache": false
-    },
-    "biome": {
-      "dependsOn": ["biome:lint"],
-      "cache": false
-    },
-"//#knip": {
+    "//#knip": {
       "cache": false,
       "inputs": [
         "knip.json",

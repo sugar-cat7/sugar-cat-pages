@@ -130,7 +130,12 @@ describe("Result type discrimination", () => {
     },
   ];
 
-  it.each(testCases)("$name", ({ createResult, isOk, expectedVal, expectedMessage }) => {
+  it.each(testCases)("$name", ({
+    createResult,
+    isOk,
+    expectedVal,
+    expectedMessage,
+  }) => {
     const result = createResult();
 
     if (isOk) {
@@ -156,33 +161,30 @@ describe("wrap", () => {
       cause: err,
     });
 
-  const successTestCases = [
-    {
-      name: "成功した Promise を Ok でラップする",
-      promise: () => Promise.resolve("success"),
-      expectedVal: "success",
-    },
-    {
-      name: "オブジェクトを返す Promise をラップできる",
-      promise: () => Promise.resolve({ data: "async result" }),
-      expectedVal: { data: "async result" },
-    },
-    {
-      name: "配列を返す Promise をラップできる",
-      promise: () => Promise.resolve([1, 2, 3]),
-      expectedVal: [1, 2, 3],
-    },
-    {
-      name: "null を返す Promise をラップできる",
-      promise: () => Promise.resolve(null),
-      expectedVal: null,
-    },
-  ];
+  it("成功した Promise を Ok でラップする", async () => {
+    const result = await wrap(Promise.resolve("success"), createError);
+    expect(result.val).toEqual("success");
+    expect(result.err).toBeUndefined();
+  });
 
-  it.each(successTestCases)("$name", async ({ promise, expectedVal }) => {
-    const result = await wrap(promise(), createError);
+  it("オブジェクトを返す Promise をラップできる", async () => {
+    const result = await wrap(
+      Promise.resolve({ data: "async result" }),
+      createError,
+    );
+    expect(result.val).toEqual({ data: "async result" });
+    expect(result.err).toBeUndefined();
+  });
 
-    expect(result.val).toEqual(expectedVal);
+  it("配列を返す Promise をラップできる", async () => {
+    const result = await wrap(Promise.resolve([1, 2, 3]), createError);
+    expect(result.val).toEqual([1, 2, 3]);
+    expect(result.err).toBeUndefined();
+  });
+
+  it("null を返す Promise をラップできる", async () => {
+    const result = await wrap(Promise.resolve(null), createError);
+    expect(result.val).toEqual(null);
     expect(result.err).toBeUndefined();
   });
 
@@ -204,17 +206,18 @@ describe("wrap", () => {
     },
   ];
 
-  it.each(failureTestCases)(
-    "$name",
-    async ({ promise, expectedMessage, expectedCode }) => {
-      const result = await wrap(promise(), createError);
+  it.each(failureTestCases)("$name", async ({
+    promise,
+    expectedMessage,
+    expectedCode,
+  }) => {
+    const result = await wrap(promise(), createError);
 
-      expect(result.err).toBeDefined();
-      expect(result.err?.message).toBe(expectedMessage);
-      expect(result.err?.code).toBe(expectedCode);
-      expect(result.val).toBeUndefined();
-    },
-  );
+    expect(result.err).toBeDefined();
+    expect(result.err?.message).toBe(expectedMessage);
+    expect(result.err?.code).toBe(expectedCode);
+    expect(result.val).toBeUndefined();
+  });
 
   const customErrorFactoryTestCases = [
     {
@@ -232,22 +235,18 @@ describe("wrap", () => {
     },
   ];
 
-  it.each(customErrorFactoryTestCases)(
-    "$name",
-    async ({
-      errorFactory,
-      originalMessage,
-      expectedMessage,
-      expectedCode,
-      expectedContext,
-    }) => {
-      const promise = Promise.reject(new Error(originalMessage));
-      const result = await wrap(promise, errorFactory);
+  it.each(customErrorFactoryTestCases)("$name", async ({
+    errorFactory,
+    originalMessage,
+    expectedMessage,
+    expectedCode,
+    expectedContext,
+  }) => {
+    const promise = Promise.reject(new Error(originalMessage));
+    const result = await wrap(promise, errorFactory);
 
-      expect(result.err?.message).toBe(expectedMessage);
-      expect(result.err?.code).toBe(expectedCode);
-      expect(result.err?.context).toEqual(expectedContext);
-    },
-  );
+    expect(result.err?.message).toBe(expectedMessage);
+    expect(result.err?.code).toBe(expectedCode);
+    expect(result.err?.context).toEqual(expectedContext);
+  });
 });
-

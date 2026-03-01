@@ -1,0 +1,7 @@
+---
+registries:
+  - type: standard
+    ref: v4.476.0
+packages:
+  - name: biomejs/biome
+    version: 2.3.8

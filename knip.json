@@ -4,10 +4,7 @@
     "interface": true,
     "type": true
   },
-  "ignoreUnresolved": [
-    "./\\+types/root",
-    "./\\+types/route"
-  ],
+  "ignoreBinaries": ["biome"],
   "tags": ["-lintignore"],
   "workspaces": {
     ".": {
@@ -17,17 +14,12 @@
       ]
     },
     "services/mypages": {
-      "entry": ["app/**/{page,layout,loading,error,not-found,route,global-error}.{ts,tsx}"],
+      "entry": [
+        "app/**/{page,layout,loading,error,not-found,route,global-error}.{ts,tsx}"
+      ],
       "project": ["**/*.{ts,tsx}"],
-      "ignore": [".next/**", "node_modules/**", "workers/app.ts"],
-      "ignoreDependencies": [
-        "tailwindcss"
-      ]
-    },
-    "services/server": {
-      "entry": ["cmd/*.ts", "local/**/*.ts"],
-      "project": ["**/*.ts"],
-      "ignore": ["dist/**", "drizzle/**", "node_modules/**"]
+      "ignore": ["node_modules/**", "workers/app.ts"],
+      "ignoreDependencies": ["tailwindcss"]
     },
     "packages/errors": {
       "project": ["*.ts"],
@@ -35,6 +27,14 @@
     },
     "packages/logger": {
       "project": ["*.ts"],
+      "ignore": ["dist/**", "node_modules/**"]
+    },
+    "packages/dayjs": {
+      "project": ["*.ts"],
+      "ignore": ["dist/**", "node_modules/**"]
+    },
+    "packages/content-fetcher": {
+      "project": ["src/**/*.ts"],
       "ignore": ["dist/**", "node_modules/**"]
     }
   }
