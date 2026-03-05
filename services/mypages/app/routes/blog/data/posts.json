@@ -1,5 +1,14 @@
 [
   {
+    "id": "hatena-2026-03-03-100000",
+    "title": "Next.js on Cloudflare Workers からCloud Run Worker Pool(cloudflared)へのセキュアな接続を考える",
+    "description": "2023年くらいからの Next.js（App Router）の流行りもあり、昨今当たり前のように使われるようになった RSC。ユースケースによりますが、セキュリティや可用性向上のため、RSC は BFF のレイヤーとしてAPI サーバーは別に分離する構成を取るのは割と多いんじゃないでしょうか。\nNext.js v16 では Vercel Data Cache への依存が強まり、ある程度ちゃんとN...",
+    "url": "https://blog.sugar-cat.dev/entry/2026/03/03/100000",
+    "source": "hatena",
+    "publishedAt": "2026-03-03",
+    "thumbnail": "https://cdn.image.st-hatena.com/image/scale/2c3d10e16c9e392376e34eac0e4d9629d249476c/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fs%2Fsugar-cat-dev%2F20260216%2F20260216212619.png"
+  },
+  {
     "id": "hatena-2026-02-28-211052",
     "title": "Claude Code御一行様用 個人的設定",
     "description": "この記事は99%手書きです。\n自分はClaude(Opus)を基本は使用しつつ、レビューにCodex(5.3)とGitHub Copilotを混ぜて使ってます。よくあるやつです。\n最近はユーザー側であれこれ設定しなくてもそれなりに良い感じに動きます。とはいえ設定した方が効率よく進むのも事実なので、最低限の整備はしておいて損はありません。新しい盆栽感がありますね。\n汎用的なやつ\n汎用的なPlugin...",
