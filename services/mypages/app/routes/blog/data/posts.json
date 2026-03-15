@@ -1,5 +1,14 @@
 [
   {
+    "id": "hatena-2026-03-10-093000",
+    "title": "Goでアーキテクチャ違反とデッドコードを機械的に検出する",
+    "description": "AIエージェント × knipで無駄コードを簡単に掃除等で紹介されているが、\nTypeScriptであればknipのような便利ツールがある。Goだとdeadcodeがそれかなーと思いつつ、AI時代にデッドコードを削除したり、アーキテクチャの制約を機械的に検知したくなるのでメモ書き。\ndeadcodeでコード削除\n皆さんお馴染みdeadcode は Go公式ツールの一部。コールグラフ解析で到達不可能...",
+    "url": "https://blog.sugar-cat.dev/entry/2026/03/10/093000",
+    "source": "hatena",
+    "publishedAt": "2026-03-10",
+    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901362865330/1773102600"
+  },
+  {
     "id": "hatena-2026-03-03-100000",
     "title": "Next.js on Cloudflare Workers からCloud Run Worker Pool(cloudflared)へのセキュアな接続を考える",
     "description": "2023年くらいからの Next.js（App Router）の流行りもあり、昨今当たり前のように使われるようになった RSC。ユースケースによりますが、セキュリティや可用性向上のため、RSC は BFF のレイヤーとしてAPI サーバーは別に分離する構成を取るのは割と多いんじゃないでしょうか。\nNext.js v16 では Vercel Data Cache への依存が強まり、ある程度ちゃんとN...",
