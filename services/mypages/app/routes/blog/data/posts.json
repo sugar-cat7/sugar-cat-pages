@@ -1,5 +1,14 @@
 [
   {
+    "id": "hatena-2026-03-17-093000",
+    "title": "Argo Workflowsで制御されているパイプラインをrunnでテストする",
+    "description": "Argo Workflows で組んだバッチパイプラインのテスト、どうしてますか。\n自分はrunnで再現してます。\nrunnはCLI ツールとしても使えるけど、Go ライブラリとしてテストに組み込めるので、runn.Load() でランブックを読み込んで go test の中からPod内で動かしているコマンドを実行できます。\nArgo Workflowsのテストの何が難しいか\nたとえばArgo の...",
+    "url": "https://blog.sugar-cat.dev/entry/2026/03/17/093000",
+    "source": "hatena",
+    "publishedAt": "2026-03-17",
+    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901362868938/1773707400"
+  },
+  {
     "id": "hatena-2026-03-10-093000",
     "title": "Goでアーキテクチャ違反とデッドコードを機械的に検出する",
     "description": "AIエージェント × knipで無駄コードを簡単に掃除等で紹介されているが、\nTypeScriptであればknipのような便利ツールがある。Goだとdeadcodeがそれかなーと思いつつ、AI時代にデッドコードを削除したり、アーキテクチャの制約を機械的に検知したくなるのでメモ書き。\ndeadcodeでコード削除\n皆さんお馴染みdeadcode は Go公式ツールの一部。コールグラフ解析で到達不可能...",
