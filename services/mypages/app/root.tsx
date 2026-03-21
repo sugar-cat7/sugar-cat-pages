@@ -50,7 +50,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-adsense-account" content="ca-pub-1687621929719407" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1687621929719407"
+          crossOrigin="anonymous"
+        />
         <Meta />
         <Links />
       </head>
