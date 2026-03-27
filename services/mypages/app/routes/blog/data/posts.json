@@ -1,8 +1,17 @@
 [
   {
+    "id": "hatena-2026-03-24-093000",
+    "title": "PGliteとOPFSでブラウザ内DBを試すメモ",
+    "description": "PGliteとOPFSでブラウザ内DBを試すメモ",
+    "url": "https://blog.sugar-cat.dev/entry/2026/03/24/093000",
+    "source": "hatena",
+    "publishedAt": "2026-03-24",
+    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901365652539/1774312200"
+  },
+  {
     "id": "hatena-2026-03-17-093000",
     "title": "Argo Workflowsで制御されているパイプラインをrunnでテストする",
-    "description": "Argo Workflows で組んだバッチパイプラインのテスト、どうしてますか。\n自分はrunnで再現してます。\nrunnはCLI ツールとしても使えるけど、Go ライブラリとしてテストに組み込めるので、runn.Load() でランブックを読み込んで go test の中からPod内で動かしているコマンドを実行できます。\nArgo Workflowsのテストの何が難しいか\nたとえばArgo の...",
+    "description": "Argo Workflowsで制御されているパイプラインをrunnでテストする",
     "url": "https://blog.sugar-cat.dev/entry/2026/03/17/093000",
     "source": "hatena",
     "publishedAt": "2026-03-17",
@@ -11,7 +20,7 @@
   {
     "id": "hatena-2026-03-10-093000",
     "title": "Goでアーキテクチャ違反とデッドコードを機械的に検出する",
-    "description": "AIエージェント × knipで無駄コードを簡単に掃除等で紹介されているが、\nTypeScriptであればknipのような便利ツールがある。Goだとdeadcodeがそれかなーと思いつつ、AI時代にデッドコードを削除したり、アーキテクチャの制約を機械的に検知したくなるのでメモ書き。\ndeadcodeでコード削除\n皆さんお馴染みdeadcode は Go公式ツールの一部。コールグラフ解析で到達不可能...",
+    "description": "Goでアーキテクチャ違反とデッドコードを機械的に検出する",
     "url": "https://blog.sugar-cat.dev/entry/2026/03/10/093000",
     "source": "hatena",
     "publishedAt": "2026-03-10",
@@ -20,7 +29,7 @@
   {
     "id": "hatena-2026-03-03-100000",
     "title": "Next.js on Cloudflare Workers からCloud Run Worker Pool(cloudflared)へのセキュアな接続を考える",
-    "description": "2023年くらいからの Next.js（App Router）の流行りもあり、昨今当たり前のように使われるようになった RSC。ユースケースによりますが、セキュリティや可用性向上のため、RSC は BFF のレイヤーとしてAPI サーバーは別に分離する構成を取るのは割と多いんじゃないでしょうか。\nNext.js v16 では Vercel Data Cache への依存が強まり、ある程度ちゃんとN...",
+    "description": "2023年くらいからの Next.js（App Router）の流行りもあり、昨今当たり前のように使われるようになった RSC。ユースケースによりますが、セキュリティや可用性向上のため、RSC は BFF のレイヤーとしてAPI サーバーは別に分離する構成を取るのは割と多いんじゃないでしょうか。 Next.js v16 では Vercel Data Cache への依存が強まり、ある程度ちゃんとN...",
     "url": "https://blog.sugar-cat.dev/entry/2026/03/03/100000",
     "source": "hatena",
     "publishedAt": "2026-03-03",
@@ -29,7 +38,7 @@
   {
     "id": "hatena-2026-02-28-211052",
     "title": "Claude Code御一行様用 個人的設定",
-    "description": "この記事は99%手書きです。\n自分はClaude(Opus)を基本は使用しつつ、レビューにCodex(5.3)とGitHub Copilotを混ぜて使ってます。よくあるやつです。\n最近はユーザー側であれこれ設定しなくてもそれなりに良い感じに動きます。とはいえ設定した方が効率よく進むのも事実なので、最低限の整備はしておいて損はありません。新しい盆栽感がありますね。\n汎用的なやつ\n汎用的なPlugin...",
+    "description": "この記事は99%手書きです。 自分はClaude(Opus)を基本は使用しつつ、レビューにCodex(5.3)とGitHub Copilotを混ぜて使ってます。よくあるやつです。 最近はユーザー側であれこれ設定しなくてもそれなりに良い感じに動きます。とはいえ設定した方が効率よく進むのも事実なので、最低限の整備はしておいて損はありません。新しい盆栽感がありますね。 汎用的なやつ 汎用的なPlugin...",
     "url": "https://blog.sugar-cat.dev/entry/2026/02/28/211052",
     "source": "hatena",
     "publishedAt": "2026-02-28",
@@ -38,7 +47,7 @@
   {
     "id": "hatena-2026-02-24-100000",
     "title": "Gemini Live API + DeepgramでリアルタイムAI音声会話をする",
-    "description": "GeminiのLive API は音声をそのまま受け取って会話できて便利なんですが、日本語で使っているとinputTranscription が長時間発話で不安定になる問題がありました。\nユーザー側のターンで発話での応答が遅延・欠落してしまう問題が。。。\ninputTranscriptionを結合してみてみるとなんか、発話時間？が一定を超えたらめちゃくちゃバグってる。\n抜粋\n\n生産、生産、生産、生...",
+    "description": "GeminiのLive API は音声をそのまま受け取って会話できて便利なんですが、日本語で使っているとinputTranscription が長時間発話で不安定になる問題がありました。 ユーザー側のターンで発話での応答が遅延・欠落してしまう問題が。。。 inputTranscriptionを結合してみてみるとなんか、発話時間？が一定を超えたらめちゃくちゃバグってる。 抜粋 生産、生産、生産、生産...",
     "url": "https://blog.sugar-cat.dev/entry/2026/02/24/100000",
     "source": "hatena",
     "publishedAt": "2026-02-24",
@@ -47,7 +56,7 @@
   {
     "id": "hatena-2026-02-17-100000",
     "title": "Better AuthのEmail OTP + DrizzleでメールOTP認証",
-    "description": "Better Authを利用したサービスでGoogleログイン後に Email OTP（6桁のワンタイムパスワード）でメールアドレスの所有確認を挟みたいな〜という場面があり、\nBetter Auth の emailOTP プラグインと Drizzle Adapter を組み合わせて、OAuth ログイン後のメール認証を実装を楽できたのでメモとして残す。\n昨今色々なサービスで使われているEmail ...",
+    "description": "Better Authを利用したサービスでGoogleログイン後に Email OTP（6桁のワンタイムパスワード）でメールアドレスの所有確認を挟みたいな〜という場面があり、 Better Auth の emailOTP プラグインと Drizzle Adapter を組み合わせて、OAuth ログイン後のメール認証を実装を楽できたのでメモとして残す。 昨今色々なサービスで使われているEmail ...",
     "url": "https://blog.sugar-cat.dev/entry/2026/02/17/100000",
     "source": "hatena",
     "publishedAt": "2026-02-17",
@@ -65,7 +74,7 @@
   {
     "id": "hatena-2026-02-02-100000",
     "title": "Vercel OIDCを利用してGoogle Cloudリソースへアクセスする",
-    "description": "自分の昔の記憶(2022年頃)ではVercelから Google Cloudへの認証に Workload Identity Federation が使えず、Service Account の秘密鍵をVercelの環境変数に登録する必要があり微妙だなーと思っていました。\n久しぶりに調べてみたところ Vercel OIDC がサポートされており、秘密鍵なしでフェデレーションできるようになっていました。...",
+    "description": "自分の昔の記憶(2022年頃)ではVercelから Google Cloudへの認証に Workload Identity Federation が使えず、Service Account の秘密鍵をVercelの環境変数に登録する必要があり微妙だなーと思っていました。 久しぶりに調べてみたところ Vercel OIDC がサポートされており、秘密鍵なしでフェデレーションできるようになっていました。...",
     "url": "https://blog.sugar-cat.dev/entry/2026/02/02/100000",
     "source": "hatena",
     "publishedAt": "2026-02-02",
@@ -74,7 +83,7 @@
   {
     "id": "hatena-2026-01-28-090000",
     "title": "Cloudflare WorkersでDiscord APIのRatelimitに立ち向かう",
-    "description": "※この記事は個人開発の遊びの内容です。\nサービスの前提\nVTuberの配信情報を通知するDiscordBot\n導入サーバー数: 約450サーバー(2026/1/28現在)\n通知頻度: 1分ごとに配信情報を全Discordサーバーへと配信する(昔ながらのCron方式)\n関連資料：\n speakerdeck.com\n speakerdeck.com\nzenn.dev\nDiscord APIの制限\nDi...",
+    "description": "※この記事は個人開発の遊びの内容です。 サービスの前提 VTuberの配信情報を通知するDiscordBot 導入サーバー数: 約450サーバー(2026/1/28現在) 通知頻度: 1分ごとに配信情報を全Discordサーバーへと配信する(昔ながらのCron方式) 関連資料： speakerdeck.com speakerdeck.com zenn.dev Discord APIの制限 Disc...",
     "url": "https://blog.sugar-cat.dev/entry/2026/01/28/090000",
     "source": "hatena",
     "publishedAt": "2026-01-28",
@@ -83,7 +92,7 @@
   {
     "id": "hatena-2026-01-21-093744",
     "title": "Raw ChartでKustomize管理のマニフェストをそのままHelmfile管理にする",
-    "description": "Raw Chartは、Helmfile から任意の Kubernetes マニフェストをデプロイするための汎用的な Helm Chart です。\nbedag.github.io\n既存の Kustomize 構成をとりあえず Helmfile 管理に移したい場合や、\n諸事情により Helmfile の統合機能を素直に使えない場合（ConfigMapGenerator を使っているなど）にも利用できま...",
+    "description": "Raw Chartは、Helmfile から任意の Kubernetes マニフェストをデプロイするための汎用的な Helm Chart です。 bedag.github.io 既存の Kustomize 構成をとりあえず Helmfile 管理に移したい場合や、 諸事情により Helmfile の統合機能を素直に使えない場合（ConfigMapGenerator を使っているなど）にも利用できま...",
     "url": "https://blog.sugar-cat.dev/entry/2026/01/21/093744",
     "source": "hatena",
     "publishedAt": "2026-01-21",
@@ -92,7 +101,7 @@
   {
     "id": "hatena-2026-01-17-181559",
     "title": "開発環境現状確認 2026",
-    "description": "流行りに乗ってみた\nTerminal Emulator\n元々Hyperを使っていたのですが、最近Ghosttyに乗り換えました。\nghostty.org\n（リモート側のホストで動かすtmuxセッションとのクリップボード共有のために、OSC 52のサポートが必要だったため...）\ngithub.com\n\nちょっと似てて気に入ってます。\nShell\nMacなのでzshを使っています。\n自分はクラウドを...",
+    "description": "流行りに乗ってみた Terminal Emulator 元々Hyperを使っていたのですが、最近Ghosttyに乗り換えました。 ghostty.org （リモート側のホストで動かすtmuxセッションとのクリップボード共有のために、OSC 52のサポートが必要だったため...） github.com ちょっと似てて気に入ってます。 Shell Macなのでzshを使っています。 自分はクラウドを使...",
     "url": "https://blog.sugar-cat.dev/entry/2026/01/17/181559",
     "source": "hatena",
     "publishedAt": "2026-01-17",
@@ -101,7 +110,7 @@
   {
     "id": "hatena-2026-01-17-180503",
     "title": "ブログ移設",
-    "description": "もっと周りを気にせずにカジュアルに色々なテーマでブログを書きたいな、、みたいな場面が増えたのではてなブログに移ってみることにした。\n今までZennに投稿していた記事とかは一旦そのままにするけど、今後Publication以外はこっちに投稿していく予定。",
+    "description": "もっと周りを気にせずにカジュアルに色々なテーマでブログを書きたいな、、みたいな場面が増えたのではてなブログに移ってみることにした。 今までZennに投稿していた記事とかは一旦そのままにするけど、今後Publication以外はこっちに投稿していく予定。",
     "url": "https://blog.sugar-cat.dev/entry/2026/01/17/180503",
     "source": "hatena",
     "publishedAt": "2026-01-17",
