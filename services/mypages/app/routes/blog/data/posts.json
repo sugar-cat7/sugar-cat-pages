@@ -1,5 +1,14 @@
 [
   {
+    "id": "hatena-2026-04-14-093000",
+    "title": "個人で運用しているサービスをNeonからCloudflare D1へ移行した",
+    "description": "個人で運用しているサービスをNeonからCloudflare D1へ移行した",
+    "url": "https://blog.sugar-cat.dev/entry/2026/04/14/093000",
+    "source": "hatena",
+    "publishedAt": "2026-04-14",
+    "thumbnail": "https://cdn.image.st-hatena.com/image/scale/f7675cad2e068781cd1363e68335f34bffe7e73f/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn.blog.st-hatena.com%2Fimages%2Ftheme%2Fog-image-1500.png"
+  },
+  {
     "id": "hatena-2026-04-06-093000",
     "title": "Claude Codeのトークン消費を頑張って下げるメモ",
     "description": "Claude Codeのトークン消費を頑張って下げる",
