@@ -1,89 +1,104 @@
 import type { Talk } from "@my-pages/content-fetcher";
+import { ArchiveList } from "~/shared/components/presenters/ArchiveList";
+import type { ArchiveRowData } from "~/shared/components/presenters/ArchiveRow";
+import {
+  FeatureBadge,
+  FeatureBody,
+  FeatureCard,
+  FeatureCover,
+  MetaSeparator,
+} from "~/shared/components/presenters/FeatureCard";
+import { MicIcon } from "~/shared/components/presenters/icons";
 import { SectionHeading } from "~/shared/components/presenters/SectionHeading";
-import { cn } from "~/shared/lib/utils";
+import { formatDateDot } from "~/shared/lib/format-date";
 
 type LatestTalksSectionProps = {
   talks: Talk[];
 };
 
-function formatDateDot(dateString: string): string {
-  const date = new Date(dateString);
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}.${month}.${day}`;
+function FallbackCover() {
+  return (
+    <>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 20% 30%, color-mix(in oklch, var(--palette-mint) 30%, var(--palette-bg-700)) 0%, var(--palette-bg-700) 60%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-35"
+        style={{
+          backgroundImage:
+            "linear-gradient(color-mix(in oklch, var(--palette-mint) 20%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklch, var(--palette-mint) 20%, transparent) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+          maskImage:
+            "radial-gradient(ellipse at 30% 40%, #000 0%, transparent 80%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse at 30% 40%, #000 0%, transparent 80%)",
+        }}
+      />
+    </>
+  );
+}
+
+function toRow(talk: Talk, idx: number): ArchiveRowData {
+  return {
+    id: talk.id,
+    href: talk.slideUrl,
+    idx,
+    date: formatDateDot(talk.publishedAt),
+    tag: "slides",
+    extra: talk.event,
+    title: talk.title,
+  };
 }
 
 export function LatestTalksSection({ talks }: LatestTalksSectionProps) {
+  if (talks.length === 0) return null;
+  const [featured, ...rest] = talks;
+  const featuredId = `TALK_${String(talks.length).padStart(3, "0")}`;
+
   return (
-    <section>
-      <SectionHeading title="Recent Talks" linkHref="/talks" />
+    <section className="flex h-full flex-col gap-3 lg:row-span-3 lg:grid lg:grid-rows-subgrid lg:gap-0 lg:gap-y-3">
+      <SectionHeading
+        title="talks"
+        subtitle="// recent conference appearances"
+        count={talks.length}
+        icon={<MicIcon className="h-4 w-4" />}
+        linkHref="/talks"
+      />
 
-      {/* anycolor-style grid card layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {talks.map((talk) => (
-          <a
-            key={talk.id}
-            href={talk.slideUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block"
-          >
-            {/* Top Divider */}
-            <div className="h-px bg-border mb-4" />
-
-            {/* Thumbnail */}
-            <div className="aspect-video rounded-md mb-4 overflow-hidden">
-              {talk.thumbnail ? (
-                <img
-                  src={talk.thumbnail}
-                  alt={talk.title}
-                  className={cn(
-                    "w-full h-full object-cover",
-                    "transition-all duration-fast",
-                    "group-hover:scale-105",
-                  )}
-                />
-              ) : (
-                <div
-                  className={cn(
-                    "w-full h-full flex items-center justify-center",
-                    "bg-gradient-to-br from-mint/10 via-mint/5 to-sky/10",
-                    "transition-all duration-fast",
-                    "group-hover:scale-105",
-                  )}
-                >
-                  <svg
-                    className="w-12 h-12 text-mint/40"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 21.6c-5.292 0-9.6-4.308-9.6-9.6S6.708 2.4 12 2.4s9.6 4.308 9.6 9.6-4.308 9.6-9.6 9.6zm-2.4-6h4.8v1.2H9.6v-1.2zm0-2.4h4.8V14.4H9.6V13.2zm0-2.4h4.8v1.2H9.6v-1.2zm-2.4-3.6h9.6v1.2H7.2V7.2z" />
-                  </svg>
-                </div>
+      <FeatureCard href={featured.slideUrl}>
+        <FeatureCover
+          thumbnail={featured.thumbnail}
+          tag="#slides"
+          id={featuredId}
+          fallback={<FallbackCover />}
+        />
+        <FeatureBody
+          meta={
+            <>
+              <FeatureBadge />
+              <span className="tabular-nums">
+                {formatDateDot(featured.publishedAt)}
+              </span>
+              {featured.event && (
+                <>
+                  <MetaSeparator />
+                  <span className="truncate">{featured.event}</span>
+                </>
               )}
-            </div>
+            </>
+          }
+          title={featured.title}
+          cta="slides / notes"
+        />
+      </FeatureCard>
 
-            {/* Date (YYYY.MM.DD format) */}
-            <time className="block text-xs text-muted-foreground mb-2 tracking-wider">
-              {formatDateDot(talk.publishedAt)}
-            </time>
-
-            {/* Event Name */}
-            {talk.event && (
-              <p className="text-sm text-foreground-soft mb-2">{talk.event}</p>
-            )}
-
-            {/* Talk Title */}
-            <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-accent transition-colors duration-fast line-clamp-2">
-              {talk.title}
-            </h3>
-
-            {/* Bottom Divider */}
-            <div className="h-px bg-border mt-4" />
-          </a>
-        ))}
-      </div>
+      <ArchiveList items={rest.map((talk, i) => toRow(talk, i + 2))} />
     </section>
   );
 }

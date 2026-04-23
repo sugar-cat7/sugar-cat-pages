@@ -24,3 +24,8 @@ export type CareerItem = {
   period: string;
   role: string;
 };
+
+export type SkillGroup = {
+  category: string;
+  items: string[];
+};

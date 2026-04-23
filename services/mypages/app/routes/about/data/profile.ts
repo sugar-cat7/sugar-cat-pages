@@ -1,4 +1,9 @@
-import type { BiographyYear, CareerItem, CertificationGroup } from "../types";
+import type {
+  BiographyYear,
+  CareerItem,
+  CertificationGroup,
+  SkillGroup,
+} from "../types";
 
 export const profile = {
   name: "Sugar Cat",
@@ -16,6 +21,18 @@ export const profile = {
     hatena: "https://sugar-cat.hatenablog.com/",
     scrapbox: "https://scrapbox.io/sugar-dev/",
   },
+  skills: [
+    { category: "Languages", items: ["Go", "TypeScript"] },
+    {
+      category: "Cloud",
+      items: ["AWS", "Google Cloud", "Azure", "Cloudflare", "Vercel"],
+    },
+    { category: "Platform", items: ["Kubernetes"] },
+    {
+      category: "Observability",
+      items: ["OpenTelemetry", "Datadog", "Sentry"],
+    },
+  ] satisfies SkillGroup[],
   biography: [
     {
       year: "2025",

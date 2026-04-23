@@ -22,18 +22,17 @@ export function Pagination({
   const getPageUrl = (page: number) => `${baseUrl}?page=${page}`;
 
   const buttonBase = cn(
-    "inline-flex items-center justify-center font-medium rounded-md",
-    "transition-all duration-fast",
-    "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
-    "px-4 py-2 text-sm",
+    "inline-flex items-center justify-center font-mono text-xs",
+    "border border-border bg-transparent",
+    "transition-colors duration-fast",
+    "px-3 py-1.5",
   );
 
-  const activeStyle = "bg-primary text-primary-foreground";
-  const inactiveStyle = "bg-muted text-foreground hover:bg-muted/80";
-  const disabledStyle =
-    "opacity-50 pointer-events-none bg-muted text-foreground";
+  const activeStyle = "border-mint text-mint bg-mint/10";
+  const inactiveStyle =
+    "text-foreground-soft hover:border-mint/60 hover:text-mint";
+  const disabledStyle = "opacity-40 pointer-events-none text-foreground-soft";
 
-  // Generate page numbers to display
   const getPageNumbers = (): (number | "...")[] => {
     const pages: (number | "...")[] = [];
     const maxVisible = 5;
@@ -42,28 +41,26 @@ export function Pagination({
       for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
       }
-    } else {
-      if (currentPage <= 3) {
-        for (let i = 1; i <= 4; i++) {
-          pages.push(i);
-        }
-        pages.push("...");
-        pages.push(totalPages);
-      } else if (currentPage >= totalPages - 2) {
-        pages.push(1);
-        pages.push("...");
-        for (let i = totalPages - 3; i <= totalPages; i++) {
-          pages.push(i);
-        }
-      } else {
-        pages.push(1);
-        pages.push("...");
-        pages.push(currentPage - 1);
-        pages.push(currentPage);
-        pages.push(currentPage + 1);
-        pages.push("...");
-        pages.push(totalPages);
+    } else if (currentPage <= 3) {
+      for (let i = 1; i <= 4; i++) {
+        pages.push(i);
       }
+      pages.push("...");
+      pages.push(totalPages);
+    } else if (currentPage >= totalPages - 2) {
+      pages.push(1);
+      pages.push("...");
+      for (let i = totalPages - 3; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      pages.push(1);
+      pages.push("...");
+      pages.push(currentPage - 1);
+      pages.push(currentPage);
+      pages.push(currentPage + 1);
+      pages.push("...");
+      pages.push(totalPages);
     }
 
     return pages;
@@ -71,31 +68,29 @@ export function Pagination({
 
   return (
     <nav
-      className="flex items-center justify-center gap-2 mt-12"
+      className="mt-12 flex items-center justify-center gap-2"
       aria-label="Pagination"
     >
-      {/* Previous button */}
       {hasPrev ? (
         <Link
           to={getPageUrl(currentPage - 1)}
           className={cn(buttonBase, inactiveStyle)}
           aria-label="Previous page"
         >
-          Previous
+          ‹ prev
         </Link>
       ) : (
         <span className={cn(buttonBase, disabledStyle)} aria-disabled="true">
-          Previous
+          ‹ prev
         </span>
       )}
 
-      {/* Page numbers */}
       <div className="flex items-center gap-1">
         {getPageNumbers().map((page, index) =>
           page === "..." ? (
             <span
               key={`ellipsis-${index}`}
-              className="px-2 text-foreground-soft"
+              className="px-2 font-mono text-xs text-muted-foreground"
             >
               ...
             </span>
@@ -105,29 +100,28 @@ export function Pagination({
               to={getPageUrl(page)}
               className={cn(
                 buttonBase,
-                "min-w-[40px]",
+                "min-w-[40px] tabular-nums",
                 page === currentPage ? activeStyle : inactiveStyle,
               )}
               aria-current={page === currentPage ? "page" : undefined}
             >
-              {page}
+              {String(page).padStart(2, "0")}
             </Link>
           ),
         )}
       </div>
 
-      {/* Next button */}
       {hasNext ? (
         <Link
           to={getPageUrl(currentPage + 1)}
           className={cn(buttonBase, inactiveStyle)}
           aria-label="Next page"
         >
-          Next
+          next ›
         </Link>
       ) : (
         <span className={cn(buttonBase, disabledStyle)} aria-disabled="true">
-          Next
+          next ›
         </span>
       )}
     </nav>

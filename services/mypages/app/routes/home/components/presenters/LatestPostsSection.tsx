@@ -1,90 +1,95 @@
 import type { BlogPost } from "@my-pages/content-fetcher";
+import { ArchiveList } from "~/shared/components/presenters/ArchiveList";
+import type { ArchiveRowData } from "~/shared/components/presenters/ArchiveRow";
+import {
+  FeatureBadge,
+  FeatureBody,
+  FeatureCard,
+  FeatureCover,
+  MetaSeparator,
+} from "~/shared/components/presenters/FeatureCard";
+import { PenIcon } from "~/shared/components/presenters/icons";
 import { SectionHeading } from "~/shared/components/presenters/SectionHeading";
-import { cn } from "~/shared/lib/utils";
+import { estimateReadMin, formatDateDot } from "~/shared/lib/format-date";
 
 type LatestPostsSectionProps = {
   posts: BlogPost[];
 };
 
-function formatDateDot(dateString: string): string {
-  const date = new Date(dateString);
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}.${month}.${day}`;
+function FallbackSnippet() {
+  return (
+    <>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 80% 20%, color-mix(in oklch, var(--palette-mint) 25%, transparent) 0%, transparent 50%), radial-gradient(circle at 20% 80%, color-mix(in oklch, var(--palette-violet) 20%, transparent) 0%, transparent 50%)",
+        }}
+      />
+      <div aria-hidden="true" className="absolute inset-0 pf-cover-grid" />
+      <pre className="pointer-events-none absolute inset-x-4 bottom-3.5 m-0 overflow-hidden whitespace-pre border border-border-strong bg-background/60 px-3 py-2.5 font-mono text-[11px] leading-[1.6] text-foreground-soft backdrop-blur-sm">
+        {`$ git push origin main
+ [cloudflare] deploying...
+ [d1] applying migration...
+ ─────────────────────────────
+ ✓ build complete`}
+      </pre>
+    </>
+  );
+}
+
+function toRow(post: BlogPost, idx: number): ArchiveRowData {
+  return {
+    id: post.id,
+    href: post.url,
+    idx,
+    date: formatDateDot(post.publishedAt),
+    tag: post.source,
+    extra: `${estimateReadMin(post.description)} min`,
+    title: post.title,
+  };
 }
 
 export function LatestPostsSection({ posts }: LatestPostsSectionProps) {
+  if (posts.length === 0) return null;
+  const [featured, ...rest] = posts;
+  const featuredId = `POST_${String(posts.length).padStart(3, "0")}`;
+
   return (
-    <section>
-      <SectionHeading title="Latest Posts" linkHref="/blog" />
+    <section className="flex h-full flex-col gap-3 lg:row-span-3 lg:grid lg:grid-rows-subgrid lg:gap-0 lg:gap-y-3">
+      <SectionHeading
+        title="writings"
+        subtitle="// ls -lt ./posts | head"
+        count={posts.length}
+        icon={<PenIcon className="h-4 w-4" />}
+        linkHref="/blog"
+      />
 
-      {/* anycolor-style vertical list with dividers */}
-      <div className="divide-y divide-border">
-        {posts.map((post) => {
-          return (
-            <a
-              key={post.id}
-              href={post.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block py-6 first:pt-0"
-            >
-              {/* Main Content Grid: Thumbnail + Details */}
-              <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-4 sm:gap-6">
-                {/* Thumbnail */}
-                <div className="aspect-video rounded-md overflow-hidden">
-                  {post.thumbnail ? (
-                    <img
-                      src={post.thumbnail}
-                      alt={post.title}
-                      className={cn(
-                        "w-full h-full object-cover",
-                        "transition-all duration-fast",
-                        "group-hover:scale-105",
-                      )}
-                    />
-                  ) : (
-                    <div
-                      className={cn(
-                        "w-full h-full flex items-center justify-center",
-                        "bg-gradient-to-br",
-                        "transition-all duration-fast",
-                        "group-hover:scale-105",
-                        post.source === "zenn"
-                          ? "from-sky/20 via-sky/10 to-mint/20"
-                          : "from-coral/20 via-coral/10 to-amber/20",
-                      )}
-                    >
-                      <span className="text-4xl opacity-50">
-                        {post.source === "zenn" ? "Z" : "B"}
-                      </span>
-                    </div>
-                  )}
-                </div>
+      <FeatureCard href={featured.url}>
+        <FeatureCover
+          thumbnail={featured.thumbnail}
+          tag={`#${featured.source}`}
+          id={featuredId}
+          fallback={<FallbackSnippet />}
+        />
+        <FeatureBody
+          meta={
+            <>
+              <FeatureBadge />
+              <span className="tabular-nums">
+                {formatDateDot(featured.publishedAt)}
+              </span>
+              <MetaSeparator />
+              <span>{estimateReadMin(featured.description)} min</span>
+            </>
+          }
+          title={featured.title}
+          cta="続きを読む"
+        />
+      </FeatureCard>
 
-                {/* Content */}
-                <div className="flex flex-col justify-center">
-                  {/* Date (YYYY.MM.DD format) */}
-                  <time className="text-xs text-muted-foreground mb-2 tracking-wider">
-                    {formatDateDot(post.publishedAt)}
-                  </time>
-
-                  {/* Title */}
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-fast">
-                    {post.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-sm text-foreground-soft leading-relaxed line-clamp-2">
-                    {post.description}
-                  </p>
-                </div>
-              </div>
-            </a>
-          );
-        })}
-      </div>
+      <ArchiveList items={rest.map((post, i) => toRow(post, i + 2))} />
     </section>
   );
 }

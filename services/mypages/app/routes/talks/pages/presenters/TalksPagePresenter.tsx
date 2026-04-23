@@ -1,6 +1,13 @@
 import type { Talk } from "@my-pages/content-fetcher";
+import type { ArchiveRowData } from "~/shared/components/presenters/ArchiveRow";
+import { PageHeader } from "~/shared/components/presenters/PageHeader";
 import { Pagination } from "~/shared/components/presenters/Pagination";
-import { TalkCard } from "../../components/presenters/TalkCard";
+import {
+  groupByYear,
+  YearSection,
+} from "~/shared/components/presenters/YearSection";
+import { formatDateDot } from "~/shared/lib/format-date";
+import { inferTalkSource } from "~/shared/lib/tag-color";
 
 type TalksPagePresenterProps = {
   talks: Talk[];
@@ -8,29 +15,47 @@ type TalksPagePresenterProps = {
   totalPages: number;
 };
 
+function toRow(talk: Talk): ArchiveRowData {
+  return {
+    id: talk.id,
+    href: talk.slideUrl,
+    date: formatDateDot(talk.publishedAt),
+    tag: inferTalkSource(talk.slideUrl),
+    extra: talk.event,
+    title: talk.title,
+  };
+}
+
 export function TalksPagePresenter({
   talks,
   currentPage,
   totalPages,
 }: TalksPagePresenterProps) {
-  return (
-    <div className="min-h-screen">
-      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
-        {/* Page Header */}
-        <div className="mb-10 sm:mb-16">
-          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Talks
-          </h1>
-        </div>
+  const groups = groupByYear(talks);
 
-        {/* Talks Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          {talks.map((talk) => (
-            <TalkCard key={talk.id} talk={talk} />
+  return (
+    <div>
+      <div className="container mx-auto px-4 py-12 sm:px-6 sm:py-16 md:py-24">
+        <PageHeader
+          title="talks"
+          command="ls -lt ~/talks"
+          meta={
+            <>
+              <span>{talks.length} entries</span>
+              <span className="opacity-50">·</span>
+              <span>
+                page {currentPage} / {totalPages}
+              </span>
+            </>
+          }
+        />
+
+        <div className="space-y-10">
+          {groups.map(([year, items]) => (
+            <YearSection key={year} year={year} items={items.map(toRow)} />
           ))}
         </div>
 
-        {/* Pagination */}
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

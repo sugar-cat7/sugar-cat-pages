@@ -45,3 +45,6 @@ coverage
 services/mypages/e2e/__screenshots__/
 services/mypages/playwright-report/
 services/mypages/test-results/
+
+# Playwright MCP artifacts (local debugging only)
+.playwright-mcp/

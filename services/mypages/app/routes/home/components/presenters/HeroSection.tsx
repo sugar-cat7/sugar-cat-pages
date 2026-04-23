@@ -1,103 +1,183 @@
+import type { ReactNode } from "react";
+import { CodeName } from "~/shared/components/presenters/CodeName";
+import { CornerBracket } from "~/shared/components/presenters/CornerBracket";
+import {
+  GitHubIcon,
+  HatenaIcon,
+  RssIcon,
+  XIcon,
+  ZennIcon,
+} from "~/shared/components/presenters/icons";
+import { MultiTypeWriter } from "~/shared/components/presenters/MultiTypeWriter";
+
+type Social = {
+  href: string;
+  label: string;
+  handle?: string;
+  icon: ReactNode;
+};
+
+const socials: Social[] = [
+  {
+    href: "https://github.com/sugar-cat7",
+    label: "github",
+    handle: "/sugar-cat7",
+    icon: <GitHubIcon className="h-3.5 w-3.5" />,
+  },
+  {
+    href: "https://x.com/sugar235711",
+    label: "x",
+    handle: "/sugar235711",
+    icon: <XIcon className="h-3.5 w-3.5" />,
+  },
+  {
+    href: "https://zenn.dev/king",
+    label: "zenn",
+    handle: "/king",
+    icon: <ZennIcon className="h-3.5 w-3.5" />,
+  },
+  {
+    href: "https://sugar-cat.hatenablog.com/",
+    label: "hatena",
+    handle: "/sugar-cat",
+    icon: <HatenaIcon className="h-3.5 w-3.5" />,
+  },
+  {
+    href: "/feed",
+    label: "rss",
+    icon: <RssIcon className="h-3.5 w-3.5" />,
+  },
+];
+
+const phrases = [
+  "何でも屋さんです。",
+  "infra · observability · realtime",
+  "ご依頼等はXのDMまで。",
+];
+
+function AvatarFrame() {
+  return (
+    <div
+      className="relative aspect-square overflow-hidden border border-border-strong"
+      style={{
+        background:
+          "radial-gradient(circle at 50% 40%, color-mix(in oklch, var(--palette-mint) 18%, var(--palette-bg-700)) 0%, var(--palette-bg-700) 75%)",
+        boxShadow:
+          "0 0 0 1px var(--palette-line), 0 20px 40px -30px rgba(0,0,0,.7), inset 0 0 60px color-mix(in oklch, var(--palette-mint) 12%, transparent)",
+      }}
+    >
+      <img
+        src="/sugar-cat.png"
+        alt="Sugar Cat avatar"
+        className="absolute inset-[14%] h-[72%] w-[72%] object-contain opacity-95 mix-blend-screen"
+        style={{
+          filter:
+            "grayscale(1) contrast(0.85) brightness(1.3) drop-shadow(0 0 18px color-mix(in oklch, var(--palette-mint) 60%, transparent))",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[2]"
+        style={{
+          background:
+            "repeating-linear-gradient(to bottom, transparent 0 3px, rgba(255,255,255,.04) 3px 4px)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-0 right-0 z-[3] h-[12%] motion-safe:animate-[scan_5s_linear_infinite]"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent 0%, color-mix(in oklch, var(--palette-mint) 30%, transparent) 50%, transparent 100%)",
+          top: "-12%",
+        }}
+      />
+      <CornerBracket position="tl" className="z-[4]" />
+      <CornerBracket position="tr" className="z-[4]" />
+      <CornerBracket position="bl" className="z-[4]" />
+      <CornerBracket position="br" className="z-[4]" />
+    </div>
+  );
+}
+
 export function HeroSection() {
   return (
-    <section className="py-16 sm:py-24 md:py-32">
+    <section className="pt-12 pb-10 sm:pt-16">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-          {/* Avatar */}
-          <div className="relative mb-6 sm:mb-8">
-            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-coral/30 via-sky/20 to-mint/30 p-1">
-              <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
-                <img
-                  src="/sugar-cat.png"
-                  alt="Sugar Cat"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            {/* Decorative ring */}
-            <div className="absolute -inset-2 rounded-full border border-border/50 -z-10" />
+        <div className="grid items-start gap-10 md:grid-cols-[320px_minmax(0,1fr)] md:gap-12">
+          <div>
+            <AvatarFrame />
           </div>
 
-          {/* Name */}
-          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Sugar Cat
-          </h1>
+          <div className="min-w-0">
+            <span className="mb-6 inline-flex items-center gap-2.5 border border-border bg-card/60 px-2.5 py-1 font-mono text-[11.5px] text-muted-foreground">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-mint shadow-[0_0_8px_theme(colors.mint)] motion-safe:animate-[pulse-dot_2s_ease-in-out_infinite]" />
+              <span>
+                {"// root@sugar-cat.dev — session "}
+                <span className="text-foreground-soft">#0x01</span>
+              </span>
+            </span>
 
-          {/* Title */}
-          <p className="text-lg text-foreground-soft mb-6">Software Engineer</p>
+            <CodeName name="Sugar Cat" />
 
-          {/* Tagline */}
-          <p className="text-foreground-soft leading-relaxed max-w-lg">
-            何でも屋さんです。
-            <br className="hidden md:block" />
-            ご依頼等はXのDMまでお願いします。
-          </p>
+            <div className="mt-4 flex flex-wrap items-baseline gap-x-2.5 gap-y-1 text-sm text-foreground-soft">
+              <span className="text-mint" aria-hidden="true">
+                ▸
+              </span>
+              <span className="text-foreground-soft">software engineer</span>
+              <span className="text-muted-foreground" aria-hidden="true">
+                {"//"}
+              </span>
+              <MultiTypeWriter phrases={phrases} className="text-foreground" />
+            </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-3 sm:gap-4 mt-6 sm:mt-8">
-            <a
-              href="https://github.com/sugar-cat7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground-soft hover:text-accent transition-colors duration-fast"
-              aria-label="GitHub"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  fillRule="evenodd"
-                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://x.com/sugar235711"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground-soft hover:text-accent transition-colors duration-fast"
-              aria-label="X (Twitter)"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </a>
-            <a
-              href="https://zenn.dev/king"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground-soft hover:text-accent transition-colors duration-fast"
-              aria-label="Zenn"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M.264 23.771h4.984c.264 0 .498-.147.645-.352L19.614.874c.176-.293-.029-.645-.381-.645h-4.72c-.235 0-.44.117-.557.323L.03 23.361c-.088.176.029.41.234.41zM17.445 23.419l6.479-10.408c.205-.323-.029-.733-.41-.733h-4.691c-.176 0-.352.088-.44.235l-6.655 10.643c-.176.264.029.616.352.616h4.779c.234-.001.468-.118.586-.353z" />
-              </svg>
-            </a>
-            <a
-              href="https://sugar-cat.hatenablog.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground-soft hover:text-accent transition-colors duration-fast"
-              aria-label="Hatena"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 300 300"
-              >
-                <path d="M149.999 248.909c-54.537 0-98.906-44.367-98.906-98.909 0-54.537 44.369-98.909 98.906-98.909 54.545 0 98.908 44.372 98.908 98.909 0 54.542-44.363 98.909-98.908 98.909zm0-185.238c-47.601 0-86.33 38.723-86.33 86.329 0 47.605 38.729 86.332 86.33 86.332 47.61 0 86.338-38.727 86.338-86.332 0-47.606-38.728-86.329-86.338-86.329zM161.52 101.16c-4.832-9.785-7.783-19.3-9.273-24.845v70.055c2.447.917 4.197 3.257 4.197 6.021 0 3.559-2.887 6.442-6.443 6.442-3.56 0-6.443-2.885-6.443-6.442 0-2.896 1.925-5.317 4.558-6.131v-70.019c-1.485 5.531-4.438 15.092-9.293 24.919-7.571 15.314-17.009 28.823-17.009 28.823l6.036 82.598s5.736 6.401 22.31 6.41h.023c16.573-.009 22.312-6.41 22.312-6.41l6.035-82.598c-.003 0-9.441-13.508-17.01-28.823z" />
-              </svg>
-            </a>
-            <a
-              href="https://scrapbox.io/sugar-dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground-soft hover:text-accent transition-colors duration-fast"
-              aria-label="Scrapbox"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4 4h16v2H4V4zm0 4h16v2H4V8zm0 4h10v2H4v-2zm0 4h16v2H4v-2zm0 4h10v2H4v-2z" />
-              </svg>
-            </a>
+            <div className="mt-4 mb-5 flex flex-wrap items-center gap-x-2 gap-y-1 border-b border-dashed border-border-strong pb-4 text-xs text-foreground-soft">
+              <span className="inline-flex items-baseline gap-1.5">
+                <span className="text-mint" aria-hidden="true">
+                  ~/
+                </span>
+                <span>Tokyo, JP</span>
+              </span>
+              <span className="text-muted-foreground">·</span>
+              <span>何でも屋</span>
+              <span className="text-muted-foreground">·</span>
+              <span>
+                accepting offers via{" "}
+                <a
+                  href="https://x.com/sugar235711"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-mint underline decoration-dotted underline-offset-[3px]"
+                >
+                  X DM
+                </a>
+              </span>
+            </div>
+
+            <ul className="flex flex-wrap gap-1.5">
+              {socials.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target={s.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      s.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="group inline-flex items-center gap-2 border border-border bg-card/40 px-3 py-1.5 font-mono text-xs text-foreground-soft transition-all duration-fast hover:-translate-x-px hover:-translate-y-px hover:border-mint hover:bg-mint/10 hover:text-foreground hover:shadow-[2px_2px_0_color-mix(in_oklch,theme(colors.mint)_40%,theme(colors.border))]"
+                  >
+                    {s.icon}
+                    <span>{s.label}</span>
+                    {s.handle && (
+                      <span className="text-muted-foreground transition-colors duration-fast group-hover:text-mint">
+                        {s.handle}
+                      </span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

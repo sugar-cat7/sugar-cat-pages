@@ -10,21 +10,6 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
-// Inline script to prevent flash of incorrect theme (FOUC)
-const themeScript = `
-(function() {
-  var stored = localStorage.getItem('theme-preference');
-  var theme = (stored === 'light' || stored === 'dark') ? stored : null;
-  if (theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.style.colorScheme = theme;
-  } else {
-    var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
-  }
-})();
-`;
-
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -34,7 +19,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap",
   },
   // Favicon & Icons
   { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
@@ -46,12 +31,12 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" suppressHydrationWarning>
+    <html lang="ja" data-theme="dark" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0a0d0c" />
         <meta name="google-adsense-account" content="ca-pub-1687621929719407" />
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1687621929719407"

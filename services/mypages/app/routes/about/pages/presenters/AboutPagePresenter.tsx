@@ -1,6 +1,6 @@
+import { PageHeader } from "~/shared/components/presenters/PageHeader";
 import { BiographySection } from "../../components/presenters/BiographySection";
 import { CareerSection } from "../../components/presenters/CareerSection";
-import { CertificationsSection } from "../../components/presenters/CertificationsSection";
 import { ProfileSection } from "../../components/presenters/ProfileSection";
 import type { Profile } from "../../data/profile";
 
@@ -10,22 +10,28 @@ type AboutPagePresenterProps = {
 
 export function AboutPagePresenter({ profile }: AboutPagePresenterProps) {
   return (
-    <div className="min-h-screen">
-      <div className="container mx-auto px-6 py-16 md:py-24">
-        {/* Page Header */}
-        <div className="mb-16">
-          <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            About
-          </h1>
-        </div>
+    <div>
+      <div className="container mx-auto px-4 py-12 sm:px-6 sm:py-16 md:py-24">
+        <PageHeader
+          title="about"
+          command="whoami && cat ./bio.md"
+          meta={
+            <>
+              <span>{profile.name}</span>
+              <span className="opacity-50">·</span>
+              <span>{profile.title}</span>
+              <span className="opacity-50">·</span>
+              <span>{profile.location}</span>
+            </>
+          }
+        />
 
-        <div className="space-y-24">
+        <div className="space-y-14">
           <ProfileSection profile={profile} />
-          <BiographySection biography={profile.biography} />
-          <CareerSection career={profile.career} />
-          <CertificationsSection
-            certificationGroups={profile.certificationGroups}
-          />
+          <div className="grid gap-4 md:grid-cols-2">
+            <CareerSection career={profile.career} />
+            <BiographySection biography={profile.biography} />
+          </div>
         </div>
       </div>
     </div>
