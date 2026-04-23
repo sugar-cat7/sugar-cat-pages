@@ -1,124 +1,207 @@
-import { Tag } from "~/shared/components/presenters/Tag";
+import { useEffect, useRef, useState } from "react";
+import {
+  ArrowIcon,
+  ExtIcon,
+  GitHubIcon,
+} from "~/shared/components/presenters/icons";
 import type { Project } from "../../data/projects";
 
 type ProjectCardProps = {
   project: Project;
 };
 
-export function ProjectCard({ project }: ProjectCardProps) {
+function FallbackArtwork({ name }: { name: string }) {
   return (
-    <div className="group rounded-lg bg-card shadow-card overflow-hidden transition-all duration-fast hover:shadow-action hover:-translate-y-0.5">
-      {/* Thumbnail */}
-      <div className="aspect-video bg-gradient-to-br from-sky/20 via-mint/10 to-coral/20 flex items-center justify-center">
-        {project.ogImage ? (
-          <img
-            src={project.ogImage}
-            alt={`${project.name} thumbnail`}
-            className="w-full h-full object-cover"
+    <>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(155deg, color-mix(in oklch, var(--palette-mint) 40%, var(--palette-bg-700)) 0%, var(--palette-bg-700) 100%)",
+        }}
+      />
+      <div aria-hidden="true" className="absolute inset-0 wg-grid-fx" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 flex items-center justify-center pt-8 font-display text-[28px] font-bold tracking-tight text-foreground"
+        style={{ textShadow: "0 2px 20px rgba(0,0,0,.4)" }}
+      >
+        {name}
+      </div>
+    </>
+  );
+}
+
+function RedactedArtwork() {
+  return (
+    <>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(155deg, color-mix(in oklch, var(--palette-bg-700) 85%, #000) 0%, var(--palette-bg-900) 100%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-[36px] bottom-0 opacity-40"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, color-mix(in oklch, var(--palette-fg) 10%, transparent) 0 2px, transparent 2px 6px)",
+          filter: "blur(1.5px)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-6 top-[64px] flex flex-col gap-2"
+      >
+        {[70, 55, 80, 45].map((w) => (
+          <span
+            key={w}
+            className="block h-3 bg-foreground/40 blur-[2px]"
+            style={{ width: `${w}%` }}
           />
-        ) : (
-          <svg
-            className="w-16 h-16 text-muted-foreground/50"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-            />
-          </svg>
-        )}
+        ))}
+      </div>
+      <div className="absolute inset-0 flex items-center justify-center pt-8">
+        <div className="flex flex-col items-center gap-1.5">
+          <span className="font-mono text-[10px] uppercase tracking-[.35em] text-muted-foreground">
+            classified
+          </span>
+          <span className="font-display text-[22px] font-bold tracking-[.2em] text-foreground/85">
+            ██████████
+          </span>
+          <span className="font-mono text-[10px] tracking-widest text-mint/80">
+            access restricted
+          </span>
+        </div>
+      </div>
+    </>
+  );
+}
+
+type LinkKey = "github" | "page" | "article";
+
+const linkLabel: Record<LinkKey, string> = {
+  github: "github",
+  page: "page",
+  article: "article",
+};
+
+function ProjectThumb({ project }: { project: Project }) {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [imageFailed, setImageFailed] = useState(false);
+  const addr = project.secret ? "classified.internal" : `${project.id}.app`;
+  const showImage = !project.secret && Boolean(project.ogImage) && !imageFailed;
+
+  // onError doesn't fire if the browser already finished the failed load
+  // before React hydrated — check imperatively after mount.
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img?.complete && img.naturalWidth === 0) {
+      setImageFailed(true);
+    }
+  }, []);
+
+  return (
+    <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-card-raised">
+      {/* macOS chrome */}
+      <div
+        className="absolute inset-x-0 top-0 z-[3] flex items-center gap-1.5 border-b border-border/60 px-2.5 py-2"
+        style={{
+          background:
+            "color-mix(in oklch, var(--palette-bg-900) 70%, transparent)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+        }}
+      >
+        <span
+          aria-hidden="true"
+          className="inline-block h-2 w-2 rounded-full bg-coral"
+        />
+        <span
+          aria-hidden="true"
+          className="inline-block h-2 w-2 rounded-full bg-amber"
+        />
+        <span
+          aria-hidden="true"
+          className="inline-block h-2 w-2 rounded-full bg-mint"
+        />
+        <span className="ml-2 font-mono text-[10.5px] text-foreground-soft">
+          {addr}
+        </span>
       </div>
 
-      {/* Content */}
-      <div className="p-5">
-        {/* Title */}
-        <h2 className="font-display text-lg font-semibold text-foreground mb-2">
+      {showImage ? (
+        <img
+          ref={imgRef}
+          src={project.ogImage}
+          alt=""
+          loading="lazy"
+          onError={() => setImageFailed(true)}
+          className="absolute inset-x-0 bottom-0 top-[36px] h-auto w-full object-cover"
+        />
+      ) : project.secret ? (
+        <RedactedArtwork />
+      ) : (
+        <FallbackArtwork name={project.name} />
+      )}
+
+      {/* Chip badge */}
+      <span className="absolute bottom-2.5 right-2.5 z-[2] border border-mint/50 bg-mint/15 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-mint backdrop-blur-sm">
+        {project.chip}
+      </span>
+    </div>
+  );
+}
+
+export function ProjectCard({ project }: ProjectCardProps) {
+  const linkEntries: Array<[LinkKey, string]> = (
+    ["github", "page", "article"] as const
+  ).flatMap((key) => {
+    const href = project.links[key];
+    return href ? [[key, href] satisfies [LinkKey, string]] : [];
+  });
+
+  return (
+    <article className="group flex flex-col overflow-hidden border border-border bg-card/70 transition-all duration-md hover:-translate-x-0.5 hover:-translate-y-0.5 hover:border-mint hover:shadow-[4px_4px_0_color-mix(in_oklch,theme(colors.mint)_30%,theme(colors.border))]">
+      <ProjectThumb project={project} />
+
+      <div className="flex flex-col gap-2.5 px-5 py-4">
+        <h2 className="m-0 font-display text-[17px] font-semibold tracking-tight text-foreground">
+          <span className="text-mint" aria-hidden="true">
+            ~/
+          </span>
           {project.name}
         </h2>
-
-        {/* Description */}
-        <p className="text-sm text-foreground-soft line-clamp-2 mb-4">
+        <p className="m-0 text-[12.5px] leading-[1.6] text-foreground-soft">
           {project.description}
         </p>
 
-        {/* Technologies */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {project.technologies.map((tech) => (
-            <Tag key={tech}>{tech}</Tag>
-          ))}
-        </div>
-
-        {/* Links */}
-        <div className="flex items-center gap-3 pt-4 border-t border-border">
-          {project.links.github && (
-            <a
-              href={project.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-foreground-soft hover:text-accent transition-colors duration-fast"
-            >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  fillRule="evenodd"
-                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              GitHub
-            </a>
-          )}
-          {project.links.page && (
-            <a
-              href={project.links.page}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-foreground-soft hover:text-accent transition-colors duration-fast"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+        {linkEntries.length > 0 && (
+          <div className="mt-1 flex flex-wrap gap-1.5">
+            {linkEntries.map(([key, href]) => (
+              <a
+                key={key}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 border border-border px-2.5 py-1 font-mono text-[11.5px] text-foreground-soft transition-colors duration-fast hover:border-mint hover:bg-mint/10 hover:text-mint"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-              Page
-            </a>
-          )}
-          {project.links.article && (
-            <a
-              href={project.links.article}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-foreground-soft hover:text-accent transition-colors duration-fast"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-              Article
-            </a>
-          )}
-        </div>
+                {key === "github" ? (
+                  <GitHubIcon className="h-3 w-3" />
+                ) : (
+                  <ExtIcon className="h-3 w-3" />
+                )}
+                {linkLabel[key]}
+                <ArrowIcon className="h-2.5 w-2.5" />
+              </a>
+            ))}
+          </div>
+        )}
       </div>
-    </div>
+    </article>
   );
 }

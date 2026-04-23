@@ -1,167 +1,236 @@
 @import "tailwindcss" source(".");
 
 /* ============================================
-   Base Palette (OKLch format)
+   Design System — Terminal / CRT
+   ============================================
+
+   Color Palette
+   -------------
+   Background   bg-900 #0a0d0c → bg-600 #1d2522   page → elevated surfaces
+   Lines        line #20272a → line-3 #3a4447     borders, dividers
+   Text         fg #e7ece4 (100%) — primary body / titles / strong
+                fg-dim #94a09a  — secondary labels / captions
+                fg-mute #60706a — tertiary meta / timestamps / line nums
+   Accents      mint   oklch(0.82 0.17 140)  — prompts, highlights, key actions
+                amber  oklch(0.82 0.15 65)   — warm tag variant (hatena)
+                violet oklch(0.72 0.18 295)  — cool tag variant (zenn)
+                coral  oklch(0.72 0.19 25)   — danger / external tag
+
+   Usage Rules
+   -----------
+   * Body / titles / strong:  text-foreground    (primary)
+   * Supporting labels:       text-foreground-soft  (secondary)
+   * Meta / counts / dates:   text-muted-foreground (tertiary)
+   * Prompts / links / icons: text-mint
+   * Code chips:              text-mint on mint/10 bg
+   * Tag variants:            text-{mint|amber|violet|coral}
    ============================================ */
+
 :root {
-  /* Neutral */
-  --palette-ink-900: oklch(0.21 0.02 285);
-  --palette-ink-800: oklch(0.28 0.02 285);
-  --palette-ink-500: oklch(0.50 0.01 285);
-  --palette-cream-50: oklch(0.97 0.005 90);
-  --palette-white: oklch(1 0 0);
+  /* Background scale (deep greenish-black → softer surface) */
+  --palette-bg-900: #0a0d0c;
+  --palette-bg-800: #0f1413;
+  --palette-bg-700: #161c1a;
+  --palette-bg-600: #1d2522;
 
-  /* Accent Colors */
-  --palette-mint-100: oklch(0.82 0.06 195);
-  --palette-sky-100: oklch(0.72 0.12 260);
-  --palette-coral-100: oklch(0.90 0.08 50);
-  --palette-amber-100: oklch(0.65 0.20 35);
-  --palette-beige-100: oklch(0.82 0.015 80);
+  /* Lines */
+  --palette-line:   #20272a;
+  --palette-line-2: #2e3638;
+  --palette-line-3: #3a4447;
 
-  /* Utility */
-  --palette-line: oklch(0.87 0 0 / 0.3);
+  /* Foreground scale */
+  --palette-fg:      #e7ece4;
+  --palette-fg-dim:  #94a09a;
+  --palette-fg-mute: #60706a;
+
+  /* Accents (oklch) */
+  --palette-mint:   oklch(0.82 0.17 140);
+  --palette-amber:  oklch(0.82 0.15 65);
+  --palette-violet: oklch(0.72 0.18 295);
+  --palette-coral:  oklch(0.72 0.19 25);
 
   /* ============================================
-     Semantic Tokens
+     Semantic Tokens — bind palette to intent
      ============================================ */
-  --token-canvas: var(--palette-cream-50);
-  --token-surface: var(--palette-white);
-  --token-text: var(--palette-ink-900);
-  --token-text-soft: var(--palette-ink-800);
-  --token-text-muted: var(--palette-ink-500);
+  --token-canvas: var(--palette-bg-900);
+  --token-surface: var(--palette-bg-700);
+  --token-surface-raised: var(--palette-bg-600);
+
+  /* Text tiers: primary → secondary → tertiary */
+  --token-text: var(--palette-fg);
+  --token-text-soft: var(--palette-fg-dim);
+  --token-text-muted: var(--palette-fg-mute);
+
   --token-border: var(--palette-line);
-  --token-accent: var(--palette-coral-100);
+  --token-border-strong: var(--palette-line-2);
+  --token-accent: var(--palette-mint);
 
-  /* ============================================
-     Shadows
-     ============================================ */
-  --shadow-card: 0 20px 40px oklch(0.21 0.02 285 / 0.08);
-  --shadow-action: 0 12px 24px oklch(0.21 0.02 285 / 0.2);
-  --shadow-hero: 0 30px 80px oklch(0.21 0.02 285 / 0.3);
+  /* Shadows (flat, terminal prefers offset blocks) */
+  --shadow-card: 4px 4px 0 color-mix(in oklch, var(--palette-mint) 14%, transparent);
+  --shadow-action: 0 0 0 1px var(--palette-line-2), 4px 4px 0 color-mix(in oklch, var(--palette-mint) 20%, transparent);
+  --shadow-hero: 0 0 60px color-mix(in oklch, var(--palette-mint) 12%, transparent);
 
-  /* ============================================
-     Radius
-     ============================================ */
+  /* Radius — sharp corners for terminal feel */
   --radius-xs: 2px;
-  --radius-sm: 0.5rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 1.5rem;
-  --radius-2xl: 2rem;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 4px;
+  --radius-2xl: 6px;
 
-  /* ============================================
-     Duration
-     ============================================ */
+  /* Duration */
   --duration-fast: 150ms;
   --duration-md: 300ms;
 
-  color-scheme: light;
-}
-
-/* ============================================
-   Dark Mode Palette
-   ============================================ */
-:root[data-theme="dark"] {
-  /* Neutral (inverted for dark mode) */
-  --palette-ink-900: oklch(0.95 0.01 285);
-  --palette-ink-800: oklch(0.85 0.01 285);
-  --palette-ink-500: oklch(0.60 0.01 285);
-  --palette-cream-50: oklch(0.22 0.01 285);
-  --palette-white: oklch(0.18 0.01 285);
-
-  /* Accent Colors (adjusted for dark mode) */
-  --palette-mint-100: oklch(0.75 0.08 195);
-  --palette-sky-100: oklch(0.70 0.14 260);
-  --palette-coral-100: oklch(0.80 0.10 50);
-  --palette-amber-100: oklch(0.70 0.18 35);
-  --palette-beige-100: oklch(0.35 0.02 80);
-
-  /* Utility */
-  --palette-line: oklch(0.35 0 0 / 0.4);
-
-  /* Shadows (darker for dark mode) */
-  --shadow-card: 0 20px 40px oklch(0 0 0 / 0.3);
-  --shadow-action: 0 12px 24px oklch(0 0 0 / 0.4);
-  --shadow-hero: 0 30px 80px oklch(0 0 0 / 0.5);
-
   color-scheme: dark;
-}
-
-/* System preference fallback (when no explicit data-theme) */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    /* Neutral (inverted for dark mode) */
-    --palette-ink-900: oklch(0.95 0.01 285);
-    --palette-ink-800: oklch(0.85 0.01 285);
-    --palette-ink-500: oklch(0.60 0.01 285);
-    --palette-cream-50: oklch(0.22 0.01 285);
-    --palette-white: oklch(0.18 0.01 285);
-
-    /* Accent Colors (adjusted for dark mode) */
-    --palette-mint-100: oklch(0.75 0.08 195);
-    --palette-sky-100: oklch(0.70 0.14 260);
-    --palette-coral-100: oklch(0.80 0.10 50);
-    --palette-amber-100: oklch(0.70 0.18 35);
-    --palette-beige-100: oklch(0.35 0.02 80);
-
-    /* Utility */
-    --palette-line: oklch(0.35 0 0 / 0.4);
-
-    /* Shadows (darker for dark mode) */
-    --shadow-card: 0 20px 40px oklch(0 0 0 / 0.3);
-    --shadow-action: 0 12px 24px oklch(0 0 0 / 0.4);
-    --shadow-hero: 0 30px 80px oklch(0 0 0 / 0.5);
-
-    color-scheme: dark;
-  }
 }
 
 /* ============================================
    Tailwind Theme (Component Tokens)
    ============================================ */
 @theme {
-  /* Fonts */
-  --font-body: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Shippori Mincho B1", "Hiragino Mincho ProN", ui-serif, serif;
+  /* Fonts — JetBrains Mono body, Space Grotesk display, M PLUS fallback for CJK */
+  --font-body: "JetBrains Mono", "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-display: "Space Grotesk", "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Font Size */
   --font-size-2xs: 10px;
   --font-size-2xs--line-height: 1.4;
 
-  /* Colors */
+  /* Colors — semantic */
   --color-background: var(--token-canvas);
   --color-card: var(--token-surface);
+  --color-card-raised: var(--token-surface-raised);
   --color-foreground: var(--token-text);
   --color-foreground-soft: var(--token-text-soft);
   --color-muted-foreground: var(--token-text-muted);
-  --color-primary: var(--palette-ink-900);
-  --color-primary-foreground: var(--palette-white);
+  --color-primary: var(--palette-mint);
+  --color-primary-foreground: var(--palette-bg-900);
   --color-accent: var(--token-accent);
   --color-border: var(--token-border);
-  --color-muted: oklch(0.72 0.12 260 / 0.1);
+  --color-border-strong: var(--token-border-strong);
+  --color-muted: color-mix(in oklch, var(--palette-mint) 10%, transparent);
+  --color-ring: var(--palette-mint);
 
   /* Palette Colors (direct access) */
-  --color-mint: var(--palette-mint-100);
-  --color-sky: var(--palette-sky-100);
-  --color-coral: var(--palette-coral-100);
-  --color-amber: var(--palette-amber-100);
-  --color-beige: var(--palette-beige-100);
+  --color-mint: var(--palette-mint);
+  --color-amber: var(--palette-amber);
+  --color-violet: var(--palette-violet);
+  --color-coral: var(--palette-coral);
 
   /* Radius */
   --radius-xs: 2px;
-  --radius-sm: 0.5rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 1.5rem;
-  --radius-2xl: 2rem;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 4px;
+  --radius-2xl: 6px;
 
   /* Shadows */
-  --shadow-card: 0 20px 40px oklch(0.21 0.02 285 / 0.08);
-  --shadow-action: 0 12px 24px oklch(0.21 0.02 285 / 0.2);
+  --shadow-card: 4px 4px 0 color-mix(in oklch, var(--palette-mint) 14%, transparent);
+  --shadow-action: 0 0 0 1px var(--palette-line-2), 4px 4px 0 color-mix(in oklch, var(--palette-mint) 20%, transparent);
 
   /* Transition Duration */
   --transition-duration-fast: 150ms;
   --transition-duration-md: 300ms;
+
+  /* Keyframes */
+  --animate-blink: blink 1s steps(2, end) infinite;
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+  --animate-scan: scan 5s linear infinite;
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.6; }
+  }
+
+  @keyframes scan {
+    0% { top: -12%; }
+    100% { top: 120%; }
+  }
+}
+
+/* ============================================
+   Utilities — reusable terminal fragments
+   ============================================ */
+@utility fx-grid {
+  background-image:
+    linear-gradient(to right, var(--palette-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--palette-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 85%);
+}
+
+@utility fx-scan {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.015) 2px,
+    rgba(255, 255, 255, 0.015) 3px
+  );
+  mix-blend-mode: overlay;
+}
+
+@utility fx-orb-mint {
+  background: radial-gradient(
+    500px 260px at var(--orb-x, 50%) var(--orb-y, 50%),
+    color-mix(in oklch, var(--palette-mint) 22%, transparent),
+    transparent 70%
+  );
+}
+
+@utility glass-topbar {
+  backdrop-filter: blur(14px) saturate(1.5);
+  -webkit-backdrop-filter: blur(14px) saturate(1.5);
+  background: color-mix(in oklch, var(--palette-bg-900) 78%, transparent);
+}
+
+@utility terminal-caret {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  vertical-align: -0.12em;
+  background: var(--palette-mint);
+  animation: blink 1s steps(2, end) infinite;
+}
+
+/* Dashed horizontal rule (3px dash / 4px gap) — used for section underlines */
+@utility dashed-rule {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--palette-line-2) 0 6px,
+    transparent 6px 10px
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: bottom;
+}
+
+/* Card covers — writings featured & talks featured common bits */
+@utility pf-cover-grid {
+  background-image:
+    linear-gradient(color-mix(in oklch, var(--palette-line-2) 60%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklch, var(--palette-line-2) 60%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 40%, transparent 100%);
+}
+
+@utility wg-grid-fx {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at 50% 60%, #000 0%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 60%, #000 0%, transparent 85%);
 }
 
 /* ============================================
@@ -170,20 +239,42 @@
 @layer base {
   html {
     font-family: var(--font-body);
+    font-feature-settings: "calt" 1, "liga" 0;
   }
 
   body {
-    background: var(--color-background);
+    background-color: var(--color-background);
+    background-image:
+      radial-gradient(1100px 550px at 85% -10%, color-mix(in oklch, var(--palette-mint) 12%, transparent), transparent 55%),
+      radial-gradient(900px 500px at -5% 20%, color-mix(in oklch, var(--palette-violet) 9%, transparent), transparent 55%);
     color: var(--color-foreground);
-    line-height: 1.7;
+    line-height: 1.65;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--palette-mint) 35%, transparent);
+    color: var(--palette-bg-900);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--palette-mint);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }

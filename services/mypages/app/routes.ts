@@ -13,5 +13,6 @@ export default [
     route("blog", "routes/blog/route.tsx"),
     route("talks", "routes/talks/route.tsx"),
     route("works", "routes/works/route.tsx"),
+    route("contact", "routes/contact/route.tsx"),
   ]),
 ] satisfies RouteConfig;
