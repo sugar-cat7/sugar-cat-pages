@@ -26,6 +26,16 @@ export const projectGroups: ProjectGroup[] = [
     command: "ls ~/works/support",
     projects: [
       {
+        id: "puchi-holo-mura",
+        name: "ぷちホロの村 - 剣とお店と田舎暮らし",
+        chip: "ゲーム",
+        description:
+          "holo Indie 作品。ホロライブのタレントと村づくり・冒険を楽しむ RPG。サーバーインフラの構築を担当。",
+        links: {
+          page: "https://store.steampowered.com/app/3856280/_/",
+        },
+      },
+      {
         id: "fan-communication-service",
         name: "ファンコミュニケーションサービス",
         chip: "Webサービス",
