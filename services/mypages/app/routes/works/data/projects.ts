@@ -31,6 +31,7 @@ export const projectGroups: ProjectGroup[] = [
         chip: "ゲーム",
         description:
           "holo Indie 作品。ホロライブのタレントと村づくり・冒険を楽しむ RPG。サーバーインフラの構築を担当。",
+        ogImage: "/works/puchi-holo-mura.jpg",
         links: {
           page: "https://store.steampowered.com/app/3856280/_/",
         },
