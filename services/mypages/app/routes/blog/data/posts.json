@@ -2,7 +2,7 @@
   {
     "id": "hatena-2026-04-23-093000",
     "title": "Cloudflare ContainersでDrizzle Gatewayを動かす",
-    "description": "Cloudflare ContainersでDrizzle Gatewayを動かす。",
+    "description": "Drizzle Gatewayを使うとDrizzle StudioをSelf Hostできます。 gateway.drizzle.team drizzle-kit studio をそのまま本番でセルフホストすれば良くね？と思っていましたが公式ドキュメントの Limitations に、ローカル開発向けであり、リモート（VPS など）で使うことは想定していないと明記されています。 orm.drizz...",
     "url": "https://blog.sugar-cat.dev/entry/2026/04/23/093000",
     "source": "hatena",
     "publishedAt": "2026-04-23",
@@ -11,7 +11,7 @@
   {
     "id": "hatena-2026-04-14-093000",
     "title": "個人で運用しているサービスをNeonからCloudflare D1へ移行した",
-    "description": "個人で運用しているサービスをNeonからCloudflare D1へ移行した",
+    "description": "個人で運用しているサービスでNeonを利用していたが、そこそこ値段が高くなってきたのでCloudflareのD1へ移行しました。 運用物の前提 Cloudflare Workers上で動く配信系のキュレーションサイト/管理画面/Discord Bot(500 Server~) 移行前のざっくり構成図は↓ 関連記事 blog.sugar-cat.dev モチベーション NeonのLaunchプランで...",
     "url": "https://blog.sugar-cat.dev/entry/2026/04/14/093000",
     "source": "hatena",
     "publishedAt": "2026-04-14",
@@ -20,7 +20,7 @@
   {
     "id": "hatena-2026-04-06-093000",
     "title": "Claude Codeのトークン消費を頑張って下げるメモ",
-    "description": "Claude Codeのトークン消費を頑張って下げる",
+    "description": "Claude Codeのトークン消費量が苦しいので、少しでも減らすための試行錯誤。 RTK でコマンド出力を圧縮する RTKは CLI コマンドの出力をフィルタする Rust 製のプロキシ。 github.com git commandとかの出力をAIに読ませるように最小限の情報だけtrimしていい感じに抽出してくれる便利なやつ。 # 普通のやつ $ git diff --staged diff ...",
     "url": "https://blog.sugar-cat.dev/entry/2026/04/06/093000",
     "source": "hatena",
     "publishedAt": "2026-04-06",
@@ -29,29 +29,29 @@
   {
     "id": "hatena-2026-03-24-093000",
     "title": "PGliteとOPFSでブラウザ内DBを試すメモ",
-    "description": "PGliteとOPFSでブラウザ内DBを試すメモ",
+    "description": "PGliteはPostgreSQLをWASMにコンパイルしてブラウザやNode.jsで動かせるライブラリ。永続化先にOPFSを使うとIndexedDBより速いんだけど、Safariでまともに動かない問題がある。このあたりのメモとして残す。 OPFS WHATWGのFile System Living Standardで標準化された、オリジンごとに隔離されたプライベートファイルシステム。ユーザーから...",
     "url": "https://blog.sugar-cat.dev/entry/2026/03/24/093000",
     "source": "hatena",
     "publishedAt": "2026-03-24",
-    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901365652539/1774312200"
+    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901365652539/1777136692"
   },
   {
     "id": "hatena-2026-03-17-093000",
     "title": "Argo Workflowsで制御されているパイプラインをrunnでテストする",
-    "description": "Argo Workflowsで制御されているパイプラインをrunnでテストする",
+    "description": "Argo Workflows で組んだバッチパイプラインのテスト、どうしてますか。 自分はrunnで再現してます。 runnはCLI ツールとしても使えるけど、Go ライブラリとしてテストに組み込めるので、runn.Load() でランブックを読み込んで go test の中からPod内で動かしているコマンドを実行できます。 Argo Workflowsのテストの何が難しいか たとえばArgo の...",
     "url": "https://blog.sugar-cat.dev/entry/2026/03/17/093000",
     "source": "hatena",
     "publishedAt": "2026-03-17",
-    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901362868938/1773707400"
+    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901362868938/1777136701"
   },
   {
     "id": "hatena-2026-03-10-093000",
     "title": "Goでアーキテクチャ違反とデッドコードを機械的に検出する",
-    "description": "Goでアーキテクチャ違反とデッドコードを機械的に検出する",
+    "description": "AIエージェント × knipで無駄コードを簡単に掃除等で紹介されているが、 TypeScriptであればknipのような便利ツールがある。Goだとdeadcodeがそれかなーと思いつつ、AI時代にデッドコードを削除したり、アーキテクチャの制約を機械的に検知したくなるのでメモ書き。 deadcodeでコード削除 皆さんお馴染みdeadcode は Go公式ツールの一部。コールグラフ解析で到達不可能...",
     "url": "https://blog.sugar-cat.dev/entry/2026/03/10/093000",
     "source": "hatena",
     "publishedAt": "2026-03-10",
-    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901362865330/1773102600"
+    "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901362865330/1777136709"
   },
   {
     "id": "hatena-2026-03-03-100000",
@@ -88,15 +88,6 @@
     "source": "hatena",
     "publishedAt": "2026-02-17",
     "thumbnail": "https://ogimage.blog.st-hatena.com/17179246901344972818/17179246901354958720/1771290004"
-  },
-  {
-    "id": "zenn-d735e7dfcc5cbf",
-    "title": "リアルタイム音声AI × アバター面接で場数を増やす~BA-SUU開発記~",
-    "description": "",
-    "url": "https://zenn.dev/king/articles/d735e7dfcc5cbf",
-    "source": "zenn",
-    "publishedAt": "2026-02-15",
-    "thumbnail": "https://res.cloudinary.com/zenn/image/upload/s--e2L5Do4y--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2583%25AA%25E3%2582%25A2%25E3%2583%25AB%25E3%2582%25BF%25E3%2582%25A4%25E3%2583%25A0%25E9%259F%25B3%25E5%25A3%25B0AI%2520%25C3%2597%2520%25E3%2582%25A2%25E3%2583%2590%25E3%2582%25BF%25E3%2583%25BC%25E9%259D%25A2%25E6%258E%25A5%25E3%2581%25A7%25E5%25A0%25B4%25E6%2595%25B0%25E3%2582%2592%25E5%25A2%2597%25E3%2582%2584%25E3%2581%2599%7EBA-SUU%25E9%2596%258B%25E7%2599%25BA%25E8%25A8%2598%7E%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:sugar-cat%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzVlMTllYzU4NDAuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT"
   },
   {
     "id": "hatena-2026-02-02-100000",
