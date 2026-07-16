@@ -144,51 +144,6 @@
     "thumbnail": "https://res.cloudinary.com/zenn/image/upload/s--qhK0CD5y--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Hono%25E3%2581%25A7Connect%2520RPC%25E3%2582%2592%25E5%258B%2595%25E3%2581%258B%25E3%2581%2599%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:sugar-cat%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzVlMTllYzU4NDAuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
   },
   {
-    "id": "zenn-3ec4fd987dabe2",
-    "title": "Agones Fleet Autoscaler編",
-    "description": "",
-    "url": "https://zenn.dev/king/articles/3ec4fd987dabe2",
-    "source": "zenn",
-    "publishedAt": "2025-12-05",
-    "thumbnail": "https://res.cloudinary.com/zenn/image/upload/s--IIQwkWNX--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_72:Agones%2520Fleet%2520Autoscaler%25E7%25B7%25A8%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:sugar-cat%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzVlMTllYzU4NDAuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
-  },
-  {
-    "id": "zenn-a156a6243724df",
-    "title": "Agones GameServerAllocation編",
-    "description": "",
-    "url": "https://zenn.dev/king/articles/a156a6243724df",
-    "source": "zenn",
-    "publishedAt": "2025-12-04",
-    "thumbnail": "https://res.cloudinary.com/zenn/image/upload/s--D346vy27--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_72:Agones%2520GameServerAllocation%25E7%25B7%25A8%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:sugar-cat%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzVlMTllYzU4NDAuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
-  },
-  {
-    "id": "zenn-e956ef8f3cd6bf",
-    "title": "Agones Fleet編",
-    "description": "",
-    "url": "https://zenn.dev/king/articles/e956ef8f3cd6bf",
-    "source": "zenn",
-    "publishedAt": "2025-12-03",
-    "thumbnail": "https://res.cloudinary.com/zenn/image/upload/s--bzjIEo4o--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_76:Agones%2520Fleet%25E7%25B7%25A8%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:sugar-cat%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzVlMTllYzU4NDAuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
-  },
-  {
-    "id": "zenn-003f7b79409b4a",
-    "title": "Agones GameServer編",
-    "description": "",
-    "url": "https://zenn.dev/king/articles/003f7b79409b4a",
-    "source": "zenn",
-    "publishedAt": "2025-12-02",
-    "thumbnail": "https://res.cloudinary.com/zenn/image/upload/s--lIRJkSZS--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_76:Agones%2520GameServer%25E7%25B7%25A8%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:sugar-cat%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzVlMTllYzU4NDAuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
-  },
-  {
-    "id": "zenn-4e55f030aa01ee",
-    "title": "Agones全体概要編",
-    "description": "",
-    "url": "https://zenn.dev/king/articles/4e55f030aa01ee",
-    "source": "zenn",
-    "publishedAt": "2025-12-01",
-    "thumbnail": "https://res.cloudinary.com/zenn/image/upload/s--CSmgvmYV--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Agones%25E5%2585%25A8%25E4%25BD%2593%25E6%25A6%2582%25E8%25A6%2581%25E7%25B7%25A8%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:sugar-cat%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzVlMTllYzU4NDAuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE"
-  },
-  {
     "id": "zenn-f812a77be830ab",
     "title": "Honoざっくりキャッチアップ(v4.6.0〜v4.10.0)",
     "description": "",
@@ -204,7 +159,7 @@
     "url": "https://findy-tools.io/products/sentry/22/550",
     "source": "external",
     "publishedAt": "2025-07-04",
-    "thumbnail": "https://findy-tools.io/products/sentry/22/550/opengraph-image?de479d738d5ec9b6"
+    "thumbnail": "https://findy-tools.io/products/sentry/22/550/opengraph-image?67bf83dc4e063253"
   },
   {
     "id": "zenn-fde6d255e1bdc5",
