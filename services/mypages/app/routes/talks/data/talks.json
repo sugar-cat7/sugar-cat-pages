@@ -1,10 +1,10 @@
 [
   {
-    "id": "manual-2-https---docs-google-com-presentation-d-10ffQJ5D-uYzFBmRPJSLR882-u8m-uobyKwpy-jjaW4U-edit",
-    "title": "リアルタイムサーバー運用改善〜メタバースプラットフォームにおけるEKS運用とDatadog活用によるオートスケール実践〜",
-    "slideUrl": "https://docs.google.com/presentation/d/10ffQJ5D_uYzFBmRPJSLR882_u8m_uobyKwpy-jjaW4U/edit",
+    "id": "manual-2-https---speakerdeck-com-covercorp-riarutaimu-saba-unyou-kaizen-niokeru-eks-unyou-to-datadog-katsuyou-niyoru-oto-sukeru-jissen",
+    "title": "リアルタイムサーバー運用改善 〜メタバースプラットフォームにおけるEKS運用とDatadog活用によるオートスケール実践〜",
+    "slideUrl": "https://speakerdeck.com/covercorp/riarutaimu-saba-unyou-kaizen-niokeru-eks-unyou-to-datadog-katsuyou-niyoru-oto-sukeru-jissen",
     "publishedAt": "2025-11-18",
-    "thumbnail": "https://lh7-us.googleusercontent.com/docs/AHkbwyKa-w9_3R5lof1y43Cyu6JLsg28dzyRTeYpd6bUP6PuHYkLrdzPZK5VeKhloNwm9U2hzigz9hadHfmsL6BfibT0z_iQagzJzvGUzFVY9Z3-qXLVmvv1=w1200-h630-p"
+    "thumbnail": "https://files.speakerdeck.com/presentations/2c78b837124e499cb0226d8fb915fb1a/slide_0.jpg?40569766"
   },
   {
     "id": "sd-hono-opentelemetry-2025",
@@ -14,11 +14,11 @@
     "thumbnail": "https://files.speakerdeck.com/presentations/db051765286d4c6f9ccfff4024777bb1/preview_slide_0.jpg?37014160"
   },
   {
-    "id": "manual-1-https---docs-google-com-presentation-d-1GuL0e7nS-A-X7yBQ7itFNZTOftMooDFJgLjefUD91QU-edit",
+    "id": "manual-1-https---speakerdeck-com-covercorp-niokeru-observability-kouchiku-to-yuza-shiten-deno-shinraisei-kashika-no-genzaichi",
     "title": "メタバースプロジェクトにおけるObservability構築とユーザー視点での信頼性可視化の現在地",
-    "slideUrl": "https://docs.google.com/presentation/d/1GuL0e7nS-A_X7yBQ7itFNZTOftMooDFJgLjefUD91QU/edit",
+    "slideUrl": "https://speakerdeck.com/covercorp/niokeru-observability-kouchiku-to-yuza-shiten-deno-shinraisei-kashika-no-genzaichi",
     "publishedAt": "2025-07-11",
-    "thumbnail": "https://lh7-us.googleusercontent.com/docs/AHkbwyLf2nsKMhU-S3hAmJycsU4faZgRNzWE9KcjsTStMrbhnyG03feD0hWzsmbzo-cK-f0F5GUaBbbNMNxlvwgRrweU-vR9qaE2vLreKQufuKZRbnlY88op=w1200-h630-p"
+    "thumbnail": "https://files.speakerdeck.com/presentations/bc971d8bf33e4311ad115c2271346841/slide_0.jpg?40569966"
   },
   {
     "id": "sd-errortrackingtoorchestrion",
