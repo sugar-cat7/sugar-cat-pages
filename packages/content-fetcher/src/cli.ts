@@ -76,7 +76,7 @@ async function generateTalks(): Promise<Result<Talk[], BaseError>> {
 
 function writeJson(path: string, data: unknown): void {
   mkdirSync(dirname(path), { recursive: true });
-  writeFileSync(path, JSON.stringify(data, null, 2), "utf-8");
+  writeFileSync(path, `${JSON.stringify(data, null, 2)}\n`, "utf-8");
   console.log(`Written: ${path}`);
 }
 

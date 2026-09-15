@@ -41,14 +41,18 @@ export const manualSlides: Array<{
     title:
       "メタバースプロジェクトにおけるObservability構築とユーザー視点での信頼性可視化の現在地",
     slideUrl:
-      "https://docs.google.com/presentation/d/1GuL0e7nS-A_X7yBQ7itFNZTOftMooDFJgLjefUD91QU/edit",
+      "https://speakerdeck.com/covercorp/niokeru-observability-kouchiku-to-yuza-shiten-deno-shinraisei-kashika-no-genzaichi",
     publishedAt: "2025-07-11",
+    thumbnail:
+      "https://files.speakerdeck.com/presentations/bc971d8bf33e4311ad115c2271346841/slide_0.jpg?40569966",
   },
   {
     title:
-      "リアルタイムサーバー運用改善〜メタバースプラットフォームにおけるEKS運用とDatadog活用によるオートスケール実践〜",
+      "リアルタイムサーバー運用改善 〜メタバースプラットフォームにおけるEKS運用とDatadog活用によるオートスケール実践〜",
     slideUrl:
-      "https://docs.google.com/presentation/d/10ffQJ5D_uYzFBmRPJSLR882_u8m_uobyKwpy-jjaW4U/edit",
+      "https://speakerdeck.com/covercorp/riarutaimu-saba-unyou-kaizen-niokeru-eks-unyou-to-datadog-katsuyou-niyoru-oto-sukeru-jissen",
     publishedAt: "2025-11-18",
+    thumbnail:
+      "https://files.speakerdeck.com/presentations/2c78b837124e499cb0226d8fb915fb1a/slide_0.jpg?40569766",
   },
 ];
